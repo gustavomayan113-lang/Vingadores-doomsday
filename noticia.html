@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Notícia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <!-- seu menu -->
+</header>
+
+<section class="noticia-container">
+
+    <div class="container noticia-wrapper">
+
+        <span id="categoria" class="categoria"></span>
+
+        <h1 id="titulo" class="titulo"></h1>
+
+        <p id="subtitulo" class="subtitulo"></p>
+
+        <div class="meta-noticia">
+            <span id="data"></span>
+            <span>•</span>
+            <span id="autor"></span>
+            <span>•</span>
+            <span id="leitura"></span>
+        </div>
+
+        <img id="imagem" src="" alt="" class="imagem-principal">
+
+        <div id="conteudo"></div>
+
+    </div>
+
+</section>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if(id === "novo-ator-confirmado"){
+
+    document.title = "Novo ator confirmado";
+
+    document.getElementById("categoria").textContent =
+        "ELENCO";
+
+    document.getElementById("titulo").textContent =
+        "James Marsden é oficialmente confirmado em Avengers: Doomsday";
+
+    document.getElementById("subtitulo").textContent =
+        "Retorno do ator ao papel de Ciclope fortalece os rumores sobre uma grande participação dos X-Men no MCU.";
+
+    document.getElementById("data").textContent =
+        "10 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "4 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/ciclop-confirmado.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            A Marvel Studios confirmou oficialmente a participação de
+            James Marsden em Avengers: Doomsday, marcando o retorno do
+            ator ao papel de Ciclope.
+        </p>
+
+        <p>
+            O anúncio foi recebido com entusiasmo pelos fãs dos X-Men,
+            que há anos aguardavam a integração dos mutantes ao MCU.
+        </p>
+
+        <div class="destaque">
+            "Os mutantes terão um papel importante nos próximos eventos da Marvel."
+        </div>
+
+        <p>
+            Segundo rumores da produção, o personagem deverá participar
+            de momentos importantes envolvendo o Doutor Destino e a
+            formação de uma nova aliança de heróis.
+        </p>
+
+        <p>
+            A confirmação também reforça as especulações sobre o retorno
+            de outros integrantes clássicos dos X-Men.
+        </p>
+
+        <div class="info-box">
+            <h3>O que isso pode significar?</h3>
+
+            <ul>
+                <li>Mais participação dos X-Men no MCU</li>
+                <li>Encontro entre Vingadores e mutantes</li>
+                <li>Maior foco na Saga Multiversal</li>
+                <li>Conflitos envolvendo Doutor Destino</li>
+            </ul>
+        </div>
+    `;
+}
+
+
+if(id === "steve-mjolnir"){
+
+    document.title = "Steve Rogers com o Mjolnir";
+
+    document.getElementById("categoria").textContent =
+        "BASTIDORES";
+
+    document.getElementById("titulo").textContent =
+        "Fotos do set mostram Steve impondo o Mjolnir";
+
+    document.getElementById("subtitulo").textContent =
+        "Novas imagens dos bastidores aumentam os rumores sobre o retorno de Steve Rogers em Avengers: Doomsday.";
+
+    document.getElementById("data").textContent =
+        "08 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "5 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/bastidores.png";
+
+   document.getElementById("conteudo").innerHTML = `
+    <p>
+        Novas imagens dos bastidores de Avengers: Doomsday estão
+        movimentando a comunidade da Marvel após mostrarem Steve Rogers
+        segurando novamente o lendário Mjolnir.
+    </p>
+
+    <p>
+        A cena chamou atenção porque remete diretamente aos eventos de
+        Avengers: Endgame, quando Steve provou ser digno do martelo de
+        Thor durante a batalha final contra Thanos.
+    </p>
+
+    <div class="destaque">
+        "O retorno do Mjolnir pode ser um dos momentos mais importantes do filme."
+    </div>
+
+    <p>
+        O material promocional e os trailers divulgados pela Marvel já
+        confirmaram que Chris Evans retornará como Steve Rogers em
+        Avengers: Doomsday. Além disso, diversas cenas mostram Thor e
+        Steve voltando a dividir a tela após anos. :contentReference[oaicite:0]{index=0}
+    </p>
+
+    <p>
+        Um dos momentos mais comentados do trailer mostra Thor
+        reencontrando Steve e entregando o Mjolnir para o antigo
+        Capitão América, sugerindo que ele continua sendo digno do poder
+        de Asgard. :contentReference[oaicite:1]{index=1}
+    </p>
+
+    <p>
+        A presença do herói no centro da batalha também reforça a ideia
+        de que Steve terá um papel muito maior do que apenas uma breve
+        participação especial no longa. :contentReference[oaicite:2]{index=2}
+    </p>
+
+    <div class="destaque">
+        "Thor afirma no trailer que os heróis precisarão de um milagre — e então Steve aparece."
+    </div>
+
+    <p>
+        Entre os fãs, uma das teorias mais populares é que Steve tenha
+        retornado por causa da crise multiversal causada por Doutor
+        Destino. Outros acreditam que ele possa ser uma variante de outra
+        realidade. :contentReference[oaicite:3]{index=3}
+    </p>
+
+    <p>
+        Existem ainda especulações de que o personagem esteja envolvido
+        diretamente nos eventos que levarão ao aguardado filme Avengers:
+        Secret Wars, previsto para 2027. :contentReference[oaicite:4]{index=4}
+    </p>
+
+    <p>
+        Embora a Marvel não tenha explicado como Steve voltou à linha de
+        frente dos Vingadores, a simples imagem do herói empunhando o
+        Mjolnir já foi suficiente para transformar a cena em um dos
+        assuntos mais comentados entre os fãs do MCU. :contentReference[oaicite:5]{index=5}
+    </p>
+
+    <div class="info-box">
+
+        <h3>O que sabemos até agora?</h3>
+
+        <ul>
+            <li>Chris Evans está oficialmente de volta como Steve Rogers</li>
+            <li>Steve volta a utilizar o Mjolnir</li>
+            <li>Thor e Steve se reencontram durante o filme</li>
+            <li>Doutor Destino será o principal vilão da trama</li>
+            <li>O longa reunirá Vingadores, X-Men e Quarteto Fantástico</li>
+            <li>O filme estreia em 18 de dezembro de 2026</li>
+        </ul>
+
+    </div>
+
+    <p>
+        Com o lançamento cada vez mais próximo, os fãs aguardam novos
+        trailers para entender exatamente qual será o papel de Steve
+        Rogers na batalha contra Doutor Destino e na conclusão da Saga
+        Multiversal. :contentReference[oaicite:6]{index=6}
+    </p>
+`;}
+
+
+if(id === "roteiro-reviravolta"){
+
+    document.title = "Reviravolta no 2º ato";
+
+    document.getElementById("categoria").textContent =
+        "VAZAMENTOS";
+
+    document.getElementById("titulo").textContent =
+        "Suposto roteiro revela reviravolta no 2º ato";
+
+    document.getElementById("subtitulo").textContent =
+        "Documento que circula entre fãs sugere uma mudança drástica na história de Avengers: Doomsday, mas sua autenticidade ainda não foi confirmada.";
+
+    document.getElementById("data").textContent =
+        "05 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "6 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/vazamento.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            Um suposto trecho do roteiro de Avengers: Doomsday começou
+            a circular em fóruns e redes sociais nesta semana,
+            provocando debates intensos entre os fãs da Marvel.
+        </p>
+
+        <p>
+            O documento descreve uma possível reviravolta que aconteceria
+            durante o segundo ato do filme, alterando completamente o rumo
+            da batalha contra Doutor Destino.
+        </p>
+
+        <div class="destaque">
+            "A informação não foi confirmada pela Marvel e deve ser tratada apenas como rumor."
+        </div>
+
+        <p>
+            Segundo o texto vazado, um grupo de heróis acreditaria ter
+            derrotado Destino logo no início do confronto principal.
+            No entanto, os personagens descobririam que tudo fazia parte
+            de um plano cuidadosamente elaborado pelo vilão.
+        </p>
+
+        <p>
+            A suposta revelação faria com que diferentes equipes de heróis
+            se separassem, criando conflitos internos e dificultando a
+            resistência contra a ameaça multiversal.
+        </p>
+
+        <p>
+            Outra parte do vazamento sugere que um personagem importante
+            poderia mudar de lado temporariamente, surpreendendo tanto os
+            heróis quanto o público.
+        </p>
+
+        <div class="destaque">
+            "Caso seja verdadeiro, o vazamento indica uma das maiores viradas da Saga Multiversal."
+        </div>
+
+        <p>
+            Como acontece frequentemente com produções da Marvel, é
+            impossível saber se o material corresponde à versão final do
+            roteiro. O estúdio costuma trabalhar com múltiplas versões
+            para evitar spoilers e vazamentos reais.
+        </p>
+
+        <p>
+            Diversos fãs acreditam que o documento possa ter sido criado
+            apenas para confundir a comunidade, enquanto outros apontam
+            detalhes que parecem compatíveis com informações já divulgadas
+            oficialmente.
+        </p>
+
+        <div class="info-box">
+
+            <h3>O que o suposto vazamento afirma?</h3>
+
+            <ul>
+                <li>Uma falsa vitória contra Doutor Destino</li>
+                <li>Separação dos heróis em grupos rivais</li>
+                <li>Traição de um personagem importante</li>
+                <li>Consequências para o multiverso</li>
+                <li>Preparação para os eventos de Guerras Secretas</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Até que novas informações sejam divulgadas, os fãs devem
+            tratar o conteúdo como especulação. Ainda assim, a história
+            apresentada pelo vazamento já se tornou uma das teorias mais
+            comentadas da comunidade.
+        </p>
+    `;
+}
+
+
+
+if(id === "brinquedos-outubro"){
+
+    document.title = "Linha de brinquedos anunciada";
+
+    document.getElementById("categoria").textContent =
+        "PRODUTOS";
+
+    document.getElementById("titulo").textContent =
+        "Linha de brinquedos é anunciada para outubro";
+
+    document.getElementById("subtitulo").textContent =
+        "Novos colecionáveis inspirados em Avengers: Doomsday chegarão às lojas meses antes da estreia do filme.";
+
+    document.getElementById("data").textContent =
+        "03 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "4 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/brinquedo.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            A Marvel anunciou oficialmente uma nova linha de produtos
+            inspirados em Avengers: Doomsday. A coleção será lançada
+            mundialmente em outubro e contará com figuras de ação,
+            estátuas colecionáveis e réplicas de itens icônicos do filme.
+        </p>
+
+        <p>
+            O lançamento faz parte da estratégia tradicional da Marvel
+            de expandir a experiência dos fãs além das telas, permitindo
+            que personagens e momentos marcantes cheguem às prateleiras
+            antes mesmo da estreia do longa.
+        </p>
+
+        <div class="destaque">
+            "Alguns produtos podem revelar detalhes inéditos sobre personagens e uniformes."
+        </div>
+
+        <p>
+            Entre os itens apresentados estão figuras de Doutor Destino,
+            Capitão América, Thor, Quarteto Fantástico e diversos heróis
+            que devem participar da grande batalha contra a ameaça
+            multiversal.
+        </p>
+
+        <p>
+            Os fãs também notaram que alguns brinquedos exibem versões
+            alternativas de certos personagens, alimentando novas teorias
+            sobre variantes e universos paralelos.
+        </p>
+
+        <p>
+            Réplicas em tamanho real de objetos famosos do MCU também
+            foram anunciadas, incluindo escudos, capacetes e armas
+            inspiradas no filme.
+        </p>
+
+        <div class="destaque">
+            "Colecionadores acreditam que esta pode ser a maior linha de produtos da Saga Multiversal."
+        </div>
+
+        <p>
+            Algumas lojas já iniciaram o cadastro para pré-venda,
+            enquanto outras devem abrir reservas nas próximas semanas.
+            A expectativa é que diversos itens esgotem rapidamente devido
+            ao enorme interesse da comunidade.
+        </p>
+
+        <div class="info-box">
+
+            <h3>Produtos confirmados</h3>
+
+            <ul>
+                <li>Figuras de ação dos principais heróis</li>
+                <li>Versões colecionáveis do Doutor Destino</li>
+                <li>Réplicas de armas e acessórios</li>
+                <li>Estátuas premium para colecionadores</li>
+                <li>Produtos exclusivos de edição limitada</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Com a chegada da coleção em outubro, os fãs terão uma prévia
+            visual do universo de Avengers: Doomsday e poderão aumentar
+            ainda mais a expectativa para um dos maiores lançamentos da
+            história da Marvel.
+        </p>
+    `;
+}
+
+
+if(id === "poster-pista"){
+
+    document.title = "Pista escondida no pôster";
+
+    document.getElementById("categoria").textContent =
+        "TEORIAS";
+
+    document.getElementById("titulo").textContent =
+        "Comunidade aponta pista escondida no pôster";
+
+    document.getElementById("subtitulo").textContent =
+        "Fãs acreditam que um detalhe quase imperceptível pode revelar informações importantes sobre o papel do Doutor Destino em Avengers: Doomsday.";
+
+    document.getElementById("data").textContent =
+        "01 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "5 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/poster.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            O pôster promocional de Avengers: Doomsday continua sendo
+            analisado por fãs ao redor do mundo e uma nova teoria vem
+            ganhando força nas redes sociais.
+        </p>
+
+        <p>
+            No centro da arte é possível ver o enorme rosto do Doutor
+            Destino dominando praticamente toda a composição, enquanto
+            diversos heróis aparecem espalhados ao redor dele.
+        </p>
+
+        <div class="destaque">
+            "A posição dos personagens parece ter sido escolhida com muito cuidado."
+        </div>
+
+        <p>
+            Alguns fãs acreditam que os heróis localizados à esquerda do
+            pôster representam um grupo, enquanto os personagens à direita
+            representam uma segunda equipe que atuará separadamente durante
+            os eventos do filme.
+        </p>
+
+        <p>
+            Outra observação bastante comentada envolve a presença de
+            Ciclope em destaque na parte inferior da imagem. Para muitos,
+            isso pode indicar que os X-Men terão um papel muito maior do
+            que se imaginava inicialmente.
+        </p>
+
+        <p>
+            O Quarteto Fantástico também aparece em posição privilegiada,
+            próximo ao centro da composição, reforçando a importância da
+            equipe no confronto contra Victor Von Doom.
+        </p>
+
+        <div class="destaque">
+            "Destino observa todos os heróis do alto, sugerindo que ele já está vários passos à frente."
+        </div>
+
+        <p>
+            Outro detalhe apontado pela comunidade é o fato de Thor,
+            Capitão América e Quarteto Fantástico estarem visualmente mais
+            próximos do vilão do que os demais personagens, algo que pode
+            indicar os protagonistas centrais da história.
+        </p>
+
+        <p>
+            Embora nenhuma dessas teorias tenha sido confirmada pela
+            Marvel Studios, a riqueza de detalhes do pôster mostra que
+            cada elemento foi cuidadosamente planejado para alimentar a
+            expectativa dos fãs.
+        </p>
+
+        <div class="info-box">
+
+            <h3>Detalhes observados pela comunidade</h3>
+
+            <ul>
+                <li>Doutor Destino ocupa a posição central da arte</li>
+                <li>Ciclope aparece em destaque na parte inferior</li>
+                <li>Quarteto Fantástico está próximo ao centro</li>
+                <li>Thor aparece segurando o Stormbreaker</li>
+                <li>Possível divisão dos heróis em equipes</li>
+                <li>Presença de personagens de diferentes franquias da Marvel</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Até que novos trailers sejam divulgados, os fãs continuarão
+            examinando cada detalhe do pôster em busca de pistas sobre os
+            eventos de Avengers: Doomsday.
+        </p>
+    `;
+}
+
+if(id === "filmagens-terceiro-ato"){
+
+    document.title = "Novas filmagens de Doomsday";
+
+    document.getElementById("categoria").textContent =
+        "DESTAQUE";
+
+    document.getElementById("titulo").textContent =
+        "Estúdio confirma novas filmagens adicionais para cenas do terceiro ato";
+
+    document.getElementById("subtitulo").textContent =
+        "A Marvel voltará aos estúdios para gravar novas sequências do ato final, aumentando as expectativas para a batalha decisiva de Avengers: Doomsday.";
+
+    document.getElementById("data").textContent =
+        "12 Ago 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "6 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/gravacao-studio.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            A Marvel Studios confirmou oficialmente uma nova etapa de
+            filmagens para Avengers: Doomsday. Segundo informações da
+            produção, as gravações adicionais terão foco em cenas do
+            terceiro ato, considerado o momento mais importante da trama.
+        </p>
+
+        <p>
+            O procedimento é comum em grandes produções do estúdio e
+            permite ajustar detalhes da narrativa, melhorar sequências de
+            ação e complementar momentos importantes da história.
+        </p>
+
+        <div class="destaque">
+            "As novas gravações terão foco na batalha final contra Doutor Destino."
+        </div>
+
+        <p>
+            Fontes próximas à produção afirmam que parte das cenas envolve
+            os principais heróis do filme reunidos em um confronto de
+            escala multiversal. A expectativa é que o terceiro ato seja
+            um dos maiores já produzidos pela Marvel Studios.
+        </p>
+
+        <p>
+            Além dos Vingadores, o ato final deve contar com a presença
+            de personagens do Quarteto Fantástico e dos X-Men, algo que
+            vem sendo sugerido por materiais promocionais recentes.
+        </p>
+
+        <p>
+            As filmagens ocorrerão em estúdios utilizados anteriormente
+            para produções da Saga Multiversal e devem durar algumas
+            semanas antes do início da fase final de pós-produção.
+        </p>
+
+        <div class="destaque">
+            "O objetivo das novas gravações é aperfeiçoar momentos-chave do filme."
+        </div>
+
+        <p>
+            Embora rumores sobre refilmagens costumem preocupar alguns
+            fãs, especialistas da indústria lembram que esse processo é
+            extremamente comum em blockbusters modernos e não indica
+            problemas com a produção.
+        </p>
+
+        <p>
+            Pelo contrário: muitas das cenas mais memoráveis do Universo
+            Cinematográfico Marvel foram desenvolvidas ou aprimoradas
+            durante etapas adicionais de gravação.
+        </p>
+
+        <div class="info-box">
+
+            <h3>O que sabemos até agora?</h3>
+
+            <ul>
+                <li>As novas gravações focam no terceiro ato</li>
+                <li>Doutor Destino continua sendo o principal vilão</li>
+                <li>A batalha final será ampliada</li>
+                <li>X-Men e Quarteto Fantástico devem participar</li>
+                <li>A pós-produção continua após as filmagens</li>
+                <li>A estreia permanece prevista para dezembro de 2026</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Com as gravações adicionais em andamento, Avengers: Doomsday
+            segue como um dos projetos mais ambiciosos da história da
+            Marvel. Os fãs aguardam agora novos trailers e imagens
+            oficiais que possam revelar mais detalhes sobre o desfecho da
+            batalha contra Doutor Destino.
+        </p>
+    `;
+}
+
+if(id === "kevin-producao"){
+
+    document.title = "Diretor comenta desafios da produção";
+
+    document.getElementById("categoria").textContent =
+        "BASTIDORES";
+
+    document.getElementById("titulo").textContent =
+        "Kevin Feige comenta desafios da produção de Avengers: Doomsday";
+
+    document.getElementById("subtitulo").textContent =
+        "Presidente da Marvel Studios revela os obstáculos enfrentados para reunir heróis de diferentes universos em um único filme.";
+
+    document.getElementById("data").textContent =
+        "29 Jul 2026";
+
+    document.getElementById("autor").textContent =
+        "Equipe Doomsday News";
+
+    document.getElementById("leitura").textContent =
+        "5 min de leitura";
+
+    document.getElementById("imagem").src =
+        "img/kevin.png";
+
+    document.getElementById("conteudo").innerHTML = `
+        <p>
+            Em uma entrevista recente, Kevin Feige falou sobre os
+            bastidores de Avengers: Doomsday e descreveu o projeto
+            como um dos maiores desafios da história da Marvel Studios.
+        </p>
+
+        <p>
+            Segundo Feige, o principal objetivo da equipe é equilibrar
+            a participação de dezenas de personagens sem comprometer
+            o desenvolvimento da história principal.
+        </p>
+
+        <div class="destaque">
+            "Estamos trabalhando com personagens que os fãs acompanham há mais de uma década."
+        </div>
+
+        <p>
+            O produtor explicou que reunir Vingadores, Quarteto
+            Fantástico, X-Men e outros grupos em um único filme exige
+            planejamento cuidadoso para que cada personagem tenha seu
+            momento de destaque.
+        </p>
+
+        <p>
+            Outro desafio citado foi a escala das sequências de ação.
+            A equipe precisou desenvolver novos métodos de produção para
+            coordenar cenas envolvendo múltiplos heróis e efeitos visuais
+            extremamente complexos.
+        </p>
+
+        <p>
+            Feige também destacou a importância do Doutor Destino para a
+            narrativa, afirmando que o vilão terá um papel central nos
+            acontecimentos que definirão o futuro do Universo Marvel.
+        </p>
+
+        <div class="destaque">
+            "Doomsday não é apenas um filme dos Vingadores, é um evento para todo o universo Marvel."
+        </div>
+
+        <p>
+            Nos bastidores, centenas de artistas, roteiristas e técnicos
+            trabalham simultaneamente para conectar histórias iniciadas
+            em filmes e séries lançados ao longo dos últimos anos.
+        </p>
+
+        <p>
+            A produção também utiliza tecnologias inéditas de captura
+            virtual e efeitos digitais para criar cenários em escala
+            multiversal, algo que promete elevar ainda mais o nível das
+            cenas de ação.
+        </p>
+
+        <div class="info-box">
+
+            <h3>Principais desafios citados por Kevin Feige</h3>
+
+            <ul>
+                <li>Equilibrar dezenas de personagens importantes</li>
+                <li>Conectar diferentes franquias da Marvel</li>
+                <li>Criar uma batalha final em escala multiversal</li>
+                <li>Desenvolver o arco de Doutor Destino</li>
+                <li>Integrar Vingadores, X-Men e Quarteto Fantástico</li>
+                <li>Manter a continuidade da Saga Multiversal</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Com a produção avançando para suas etapas finais, Feige
+            afirmou que o objetivo é entregar uma experiência épica para
+            os fãs e preparar o caminho para os próximos capítulos do
+            Universo Cinematográfico Marvel.
+        </p>
+    `;
+}
+
+</script>
+
+</body>
+</html>
