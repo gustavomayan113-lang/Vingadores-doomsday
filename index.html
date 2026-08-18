@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vingadores: Doomsday | Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="audio/Avengers Doomsday _ Official Theme _ EPIC VERSION.mp3" type="audio/mpeg">
+    </audio>
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-doom.png" alt="Avengers Doomsday">
+        </a>
+
+         <div class="volume-control">
+
+             <span class="volume-icon"><img id="voluu" src="img/volume.png" alt=""></span>
+
+                <input
+                    type="range"
+                    id="volumeSlider"
+                    min="0"
+                    max="100"
+                    value="40"
+                >
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Início</a>
+            <a href="embreve.html">Notícias</a>
+            <a href="embreve.html">Personagens</a>
+            <a href="embreve.html">Teorias</a>
+            <a href="embreve.html">Filmes</a>
+            <a href="trailer.html">Trailer</a>
+            <a href="embreve.html">Cronograma</a>
+            <a href="embreve.html">Produtos</a>
+            <a href="embreve.html">Membros</a>
+
+        </nav>
+
+        <a href="embreve.html" class="login-button">
+            Entrar
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <!--
+        TROQUE hero.jpg PELA IMAGEM PRINCIPAL DO SITE
+    -->
+
+    <img
+        src="img/hero-doom.png"
+        alt="Avengers Doomsday"
+        class="hero-background"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            O PRÓXIMO GRANDE EVENTO DA MARVEL
+        </span>
+
+        <h1>
+            VINGADORES:
+            <span>DOOMSDAY</span>
+        </h1>
+
+        <p>
+            Notícias, teorias, personagens, trailers,
+            cronograma e tudo sobre Avengers: Doomsday.
+        </p>
+
+
+        <!-- CONTAGEM -->
+
+        <div class="countdown">
+
+            <div class="count-box">
+                <strong id="days">00</strong>
+                <span>Dias</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="hours">00</strong>
+                <span>Horas</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="minutes">00</strong>
+                <span>Minutos</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="seconds">00</strong>
+                <span>Segundos</span>
+            </div>
+
+        </div>
+
+
+        <a href="embreve.html" class="primary-button">
+            EXPLORAR DOOMSDAY
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- EM ALTA -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>🔥 EM ALTA</span>
+
+            <h2>
+                O que está movimentando a comunidade
+            </h2>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+
+            <!-- DOUTOR DESTINO -->
+
+            <a href="embreve.html" class="character-card">
+
+                <img
+                    src="img/card-doom.png"
+                    alt="Doutor Destino"
+                >
+
+                <div class="card-overlay">
+
+                    <span>VILÃO</span>
+
+                    <h3>
+                        Doutor Destino
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+            <!-- QUARTETO -->
+
+            <a href="embreve.html" class="character-card">
+
+                <img
+                    src="img/card-4.png"
+                    alt="Quarteto Fantástico"
+                >
+
+                <div class="card-overlay">
+
+                    <span>HERÓIS</span>
+
+                    <h3>
+                        Quarteto Fantástico
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+            <!-- X-MEN -->
+
+            <a href="embreve.html" class="character-card">
+
+                <img
+                    src="img/card-x.png"
+                    alt="X-Men"
+                >
+
+                <div class="card-overlay">
+
+                    <span>HERÓIS</span>
+
+                    <h3>
+                        X-Men
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+            <!-- VINGADORES -->
+
+            <a href="embreve.html" class="character-card">
+
+                <img
+                    src="img/card-v.png"
+                    alt="Vingadores"
+                >
+
+                <div class="card-overlay">
+
+                    <span>HERÓIS</span>
+
+                    <h3>
+                        Vingadores
+                    </h3>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- NOTÍCIAS -->
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>📰 NOTÍCIAS</span>
+
+                <h2>
+                    Últimas notícias
+                </h2>
+
+            </div>
+
+            <a href="embreve.html">
+                Ver todas →
+            </a>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+            <article class="news-card">
+
+                <img
+                    src="img/3bruxas.png"
+                    alt="Notícia Avengers Doomsday"
+                >
+
+                <div class="news-content">
+
+                    <span>
+                        16 AGO 2026
+                    </span>
+
+                    <h3>
+                        Novo detalhe de Vingadores:
+                        Doomsday pode indicar grande conexão
+                    </h3>
+
+                    <a href="embreve.html">
+                        Ler notícia →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <img
+                    src="img/destino-para.png"
+                    alt="Notícia"
+                >
+
+                <div class="news-content">
+
+                    <span>
+                        17 AGO 2026
+                    </span>
+
+                    <h3>
+                        Doutor Destino ganha destaque
+                        nas teorias dos fãs
+                    </h3>
+
+                    <a href="embreve.html">
+                        Ler notícia →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <img
+                    src="img/guerras-secretas.png"
+                    alt="Notícia"
+                >
+
+                <div class="news-content">
+
+                    <span>
+                        15 AGO 2026
+                    </span>
+
+                    <h3>
+                        O que podemos esperar
+                        do próximo crossover?
+                    </h3>
+
+                    <a href="embreve.html">
+                        Ler notícia →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TEORIAS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>🔎 COMUNIDADE</span>
+
+                <h2>
+                    Teorias em destaque
+                </h2>
+
+            </div>
+
+            <a href="embreve.html">
+                Ver todas →
+            </a>
+
+        </div>
+
+
+        <div class="theory-grid">
+
+
+            <article class="theory-card">
+
+                <img
+                    src="img/destino-chave.png"
+                    alt="Teoria"
+                >
+
+                <div>
+
+                    <span>TEORIA</span>
+
+                    <h3>
+                        Doutor Destino pode ser
+                        a chave para o evento
+                    </h3>
+
+                    <p>
+                        Uma teoria da comunidade
+                        sobre o possível papel do personagem.
+                    </p>
+
+                    <a href="embreve.html">
+                        Ver teoria →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="theory-card">
+
+                <img
+                    src="img/destino-4.png"
+                    alt="Teoria"
+                >
+
+                <div>
+
+                    <span>TEORIA</span>
+
+                    <h3>
+                        Uma conexão inesperada
+                        com o Quarteto Fantástico
+                    </h3>
+
+                    <p>
+                        O que pode acontecer no próximo evento?
+                    </p>
+
+                    <a href="embreve.html">
+                        Ver teoria →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PRODUTOS -->
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>🛒 PRODUTOS</span>
+
+                <h2>
+                    Produtos para fãs
+                </h2>
+
+            </div>
+
+            <a href="embreve.html">
+                Ver produtos →
+            </a>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <article class="product-card">
+
+                <img
+                    src="img/pop-destino.png"
+                    alt="Action Figure Homem de Ferro"
+                >
+
+                <div>
+
+                    <span>COLECIONÁVEL</span>
+
+                    <h3>
+                        Boneco Doutor Destino
+                    </h3>
+
+                    <strong>
+                        R$ 149,99
+                    </strong>
+
+                    <a href="https://www.mercadolivre.com.br/funko-dr-destino-pintado-a-mao-10cm-impressao3d/up/MLBU4718262691?pdp_filters=item_id%3AMLB5065768623&matt_tool=38524122&ua=wZ1chxFQmNZ5LWr5A4QkTMbN2l6CbmX2yM7SgNcPeEQcfN-W#origin=share&sid=share&wid=MLB5065768623&action=copy">
+                        VER PRODUTO →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <img
+                    src="img/camisa-doomsday.png"
+                    alt="Doutor Destino"
+                >
+
+                <div>
+
+                    <span>ROUPA</span>
+
+                    <h3>
+                        Camisa Vingadores Doutor Destino
+                    </h3>
+
+                    <strong>
+                        R$ 39,42
+                    </strong>
+
+                    <a href="https://produto.mercadolivre.com.br/MLB-4391728067-camisa-camiseta-vingadores-doomsday-avengers-herois-unissex-_JM?matt_tool=38524122&ua=1JUl-M2lshkLA8qHxGG23u3k5QYkpXKUTSpINdncVBB6E_eo#origin=share&sid=share&action=copy">
+                        VER PRODUTO →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <img
+                    src="img/moletom-marvel.png"
+                    alt="Camiseta Avengers"
+                >
+
+                <div>
+
+                    <span>ROUPA</span>
+
+                    <h3>
+                        Moletom Marvel
+                    </h3>
+
+                    <strong>
+                        R$ 75,66
+                    </strong>
+
+                    <a href="https://produto.mercadolivre.com.br/MLB-4208690170-moletom-blusa-de-frio-filmes-herois-marvel-_JM?matt_tool=38524122&ua=PPronPVkP7yjAHILSlPX1aHtcClbwZSssphmheZJnvHOAmXh#origin=share&sid=share&action=copy">
+                        VER PRODUTO →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <img
+                    src="img/livro-hq.png"
+                    alt="HQ Marvel"
+                >
+
+                <div>
+
+                    <span>HQ</span>
+
+                    <h3>
+                        HQ Quarteto Fantástico
+                    </h3>
+
+                    <strong>
+                        R$ 38,33
+                    </strong>
+
+                    <a href="https://www.mercadolivre.com.br/colecao-classica-marvel-vol43-quarteto-fantastico-vol09/p/MLB21580359?pdp_filters=item_id%3AMLB4288618199&matt_tool=38524122&ua=9UsJFcjh7xz_HLpEL4MnaSqpzGd6QbNSCaCSUdnlAihLRpjw#origin=share&sid=share&wid=MLB4288618199&action=copy">
+                        VER PRODUTO →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- MEMBROS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="membership-banner">
+
+            <div>
+
+                <span>⭐ APOIE O PORTAL</span>
+
+                <h2>
+                    Torne-se membro
+                </h2>
+
+                <p>
+                    Tenha acesso a teorias exclusivas,
+                    wallpapers, enquetes e conteúdos antecipados.
+                </p>
+
+            </div>
+
+            <a href="embreve.html" class="primary-button">
+                CONHECER PLANOS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <img
+                src="img/logo-doom.png"
+                alt="Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                Um portal independente feito por fãs
+                para fãs.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explorar
+            </h3>
+
+            <a href="embreve.html">
+                Notícias
+            </a>
+
+            <a href="embreve.html">
+                Teorias
+            </a>
+
+            <a href="embreve.html">
+                Personagens
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Projeto
+            </h3>
+
+            <a href="embreve.html">
+                Sobre
+            </a>
+
+            <a href="embreve.html">
+                Contato
+            </a>
+
+            <a href="embreve.html">
+                Apoie
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Avengers Doomsday Fan Portal.
+
+    </div>
+
+</footer>
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
