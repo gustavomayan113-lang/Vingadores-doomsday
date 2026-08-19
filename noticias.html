@@ -111,122 +111,24 @@
 
     <div class="container">
 
-        <div class="news-filters">
-
-            <button class="filter-chip active">Todas</button>
-            <button class="filter-chip">Elenco</button>
-            <button class="filter-chip">Bastidores</button>
-            <button class="filter-chip">Vazamentos</button>
-            <button class="filter-chip">Teorias</button>
-            <button class="filter-chip">Produtos</button>
-
+        <div class="news-filters" id="newsFilters">
+            <button class="filter-chip active" data-categoria="todas">Todas</button>
+            <button class="filter-chip" data-categoria="elenco">Elenco</button>
+            <button class="filter-chip" data-categoria="bastidores">Bastidores</button>
+            <button class="filter-chip" data-categoria="vazamentos">Vazamentos</button>
+            <button class="filter-chip" data-categoria="teorias">Teorias</button>
+            <button class="filter-chip" data-categoria="produtos">Produtos</button>
         </div>
 
-        <div class="news-grid">
-
-            <article class="news-card">
-                <img src="img/ciclop-confirmado.png" alt="Notícia">
-                <div class="news-content">
-                    <span>ELENCO</span>
-                    <h3>Novo ator confirmado no elenco principal</h3>
-                    <p class="news-excerpt">
-                        Anúncio de velho ator pegou fãs de surpresa.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">10 Ago 2026</span>
-                        <a href="noticia.html?id=novo-ator-confirmado">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="img/bastidores.png" alt="Notícia">
-                <div class="news-content">
-                    <span>BASTIDORES</span>
-                    <h3>Fotos do set mostram Steve impondo o Mjolnir</h3>
-                    <p class="news-excerpt">
-                        Imagens vazadas indicam Steve Rogers levantando o Mjolnir.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">08 Ago 2026</span>
-                        <a href="noticia.html?id=steve-mjolnir">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="img/vazamento.png" alt="Notícia">
-                <div class="news-content">
-                    <span>VAZAMENTOS</span>
-                    <h3>Suposto roteiro revela reviravolta no 2º ato</h3>
-                    <p class="news-excerpt">
-                        Trecho ainda não confirmado oficialmente pelo estúdio.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">05 Ago 2026</span>
-                        <a  href="noticia.html?id=roteiro-reviravolta">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="img/brinquedo.png" alt="Notícia">
-                <div class="news-content">
-                    <span>PRODUTOS</span>
-                    <h3>Linha de brinquedos é anunciada para outubro</h3>
-                    <p class="news-excerpt">
-                        Bonecos de ação e réplicas chegam às lojas em breve.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">03 Ago 2026</span>
-                        <a href="noticia.html?id=brinquedos-outubro">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="img/poster.png" alt="Notícia">
-                <div class="news-content">
-                    <span>TEORIAS</span>
-                    <h3>Comunidade aponta pista escondida no pôster</h3>
-                    <p class="news-excerpt">
-                        Detalhe no fundo da imagem gera debate entre fãs.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">01 Ago 2026</span>
-                        <a href="noticia.html?id=poster-pista">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="img/kevin.png" alt="Notícia">
-                <div class="news-content">
-                    <span>BASTIDORES</span>
-                    <h3>Diretor comenta desafios da produção</h3>
-                    <p class="news-excerpt">
-                        Em entrevista, cineasta fala sobre escala do projeto.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-date">29 Jul 2026</span>
-                        <a href="noticia.html?id=kevin-producao">Ler mais →</a>
-                    </div>
-                </div>
-            </article>
-
+        <div class="news-grid" id="newsGrid">
+            <!-- as notícias serão inseridas aqui via JS -->
         </div>
 
-        <div class="pagination">
-
-            <a href="#" class="page-btn prev">← Anterior</a>
-
-            <a href="#" class="page-num active">1</a>
-            <a href="#" class="page-num">2</a>
-            <a href="#" class="page-num">3</a>
-
-            <a href="#" class="page-btn next">Próxima →</a>
-
+        <div class="pagination" id="pagination">
+            <!-- os botões serão inseridos aqui via JS -->
         </div>
+
+    
 
     </div>
 
@@ -311,6 +213,187 @@
     </div>
 
 </footer>
+
+
+
+<script>
+const noticias = [
+    {
+        categoria: "ELENCO",
+        img: "img/ciclop-confirmado.png",
+        titulo: "Novo ator confirmado no elenco principal",
+        excerto: "Anúncio de velho ator pegou fãs de surpresa.",
+        data: "10 AGO 2026",
+        id: "novo-ator-confirmado"
+    },
+    {
+        categoria: "BASTIDORES",
+        img: "img/bastidores.png",
+        titulo: "Fotos do set mostram Steve impondo o Mjolnir",
+        excerto: "Imagens vazadas indicam Steve Rogers levantando o Mjolnir.",
+        data: "08 AGO 2026",
+        id: "steve-mjolnir"
+    },
+    {
+        categoria: "VAZAMENTOS",
+        img: "img/vazamento.png",
+        titulo: "Suposto roteiro revela reviravolta no 2º ato",
+        excerto: "Trecho ainda não confirmado oficialmente pelo estúdio.",
+        data: "05 AGO 2026",
+        id: "roteiro-reviravolta"
+    },
+    {
+        categoria: "PRODUTOS",
+        img: "img/brinquedo.png",
+        titulo: "Linha de brinquedos é anunciada para outubro",
+        excerto: "Bonecos de ação e réplicas chegam às lojas em breve.",
+        data: "03 AGO 2026",
+        id: "brinquedos-outubro"
+    },
+    {
+        categoria: "TEORIAS",
+        img: "img/poster.png",
+        titulo: "Comunidade aponta pista escondida no pôster",
+        excerto: "Detalhe no fundo da imagem gera debate entre fãs.",
+        data: "01 AGO 2026",
+        id: "poster-pista"
+    },
+    {
+        categoria: "BASTIDORES",
+        img: "img/kevin.png",
+        titulo: "Diretor comenta desafios da produção",
+        excerto: "Em entrevista, cineasta fala sobre escala do projeto.",
+        data: "29 JUL 2026",
+        id: "kevin-producao"
+    },
+    {
+        categoria: "VAZAMENTOS",
+        img: "img/3bruxas.png",
+        titulo: "Novo detalhe de Vingadores: Doomsday pode indicar grande conexão",
+        excerto: "3 Bruxas revelam grande segredo",
+        data: "16 AGO 2026",
+        id: "tres-bruxas-destino"
+    },
+    {
+        categoria: "TEORIAS",
+        img: "img/destino-para.png",
+        titulo: "Doutor Destino ganha destaque nas teorias dos fãs",
+        excerto: "O Doutor Destino pode estar usando Magia",
+        data: "17 AGO 2026",
+        id: "doom-teorias"
+    },
+    {
+        categoria: "TEORIAS",
+        img: "img/guerras-secretas.png",
+        titulo: "O que podemos esperar do próximo crossover",
+        excerto: "Oque esperar de Guerras Secretas",
+        data: "15 AGO 2026",
+        id: "proximo-crossover"
+    }
+    // 👉 é só colar mais objetos aqui — filtro e paginação se ajustam sozinhos
+];
+
+const NOTICIAS_POR_PAGINA = 6;
+let paginaAtual = 1;
+let filtroAtivo = "todas";
+
+function getNoticiasFiltradas() {
+    if (filtroAtivo === "todas") return noticias;
+    return noticias.filter(n => n.categoria.toLowerCase() === filtroAtivo);
+}
+
+function renderizarNoticias() {
+    const grid = document.getElementById("newsGrid");
+    const lista = getNoticiasFiltradas();
+    const totalPaginas = Math.ceil(lista.length / NOTICIAS_POR_PAGINA) || 1;
+
+    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
+    if (paginaAtual < 1) paginaAtual = 1;
+
+    const inicio = (paginaAtual - 1) * NOTICIAS_POR_PAGINA;
+    const fim = inicio + NOTICIAS_POR_PAGINA;
+    const noticiasDaPagina = lista.slice(inicio, fim);
+
+    if (noticiasDaPagina.length === 0) {
+        grid.innerHTML = `<p style="color:var(--gray);">Nenhuma notícia encontrada nessa categoria.</p>`;
+    } else {
+        grid.innerHTML = noticiasDaPagina.map(n => `
+            <article class="news-card">
+                <img src="${n.img}" alt="Notícia">
+                <div class="news-content">
+                    <span>${n.categoria}</span>
+                    <h3>${n.titulo}</h3>
+                    <p class="news-excerpt">${n.excerto}</p>
+                    <div class="news-footer">
+                        <span class="news-date">${n.data}</span>
+                        <a href="noticia.html?id=${n.id}">Ler mais →</a>
+                    </div>
+                </div>
+            </article>
+        `).join("");
+    }
+
+    renderizarPaginacao(totalPaginas);
+}
+
+function renderizarPaginacao(totalPaginas) {
+    const pag = document.getElementById("pagination");
+
+    if (totalPaginas <= 1) {
+        pag.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    html += `<a href="#" class="page-btn prev" data-action="prev" ${paginaAtual === 1 ? 'style="pointer-events:none;opacity:0.4;"' : ''}>← Anterior</a>`;
+
+    for (let i = 1; i <= totalPaginas; i++) {
+        html += `<a href="#" class="page-num ${i === paginaAtual ? 'active' : ''}" data-page="${i}">${i}</a>`;
+    }
+
+    html += `<a href="#" class="page-btn next" data-action="next" ${paginaAtual === totalPaginas ? 'style="pointer-events:none;opacity:0.4;"' : ''}>Próxima →</a>`;
+
+    pag.innerHTML = html;
+}
+
+// clique na paginação
+document.getElementById("pagination").addEventListener("click", (e) => {
+    e.preventDefault();
+    const alvo = e.target;
+
+    if (alvo.dataset.action === "prev") {
+        paginaAtual--;
+    } else if (alvo.dataset.action === "next") {
+        paginaAtual++;
+    } else if (alvo.dataset.page) {
+        paginaAtual = parseInt(alvo.dataset.page);
+    } else {
+        return;
+    }
+
+    renderizarNoticias();
+    document.querySelector(".news-filters").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// clique nos filtros
+document.getElementById("newsFilters").addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-chip");
+    if (!btn) return;
+
+    document.querySelectorAll(".filter-chip").forEach(chip => chip.classList.remove("active"));
+    btn.classList.add("active");
+
+    filtroAtivo = btn.dataset.categoria;
+    paginaAtual = 1; // sempre volta pra primeira página ao trocar de filtro
+
+    renderizarNoticias();
+});
+
+// inicializa
+renderizarNoticias();
+</script>
+
 
 </body>
 </html>

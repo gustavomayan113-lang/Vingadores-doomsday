@@ -31,19 +31,8 @@
             <img src="img/logo-doom.png" alt="Avengers Doomsday">
         </a>
 
-         <div class="volume-control">
 
-             <span class="volume-icon"><img id="voluu" src="img/volume.png" alt=""></span>
-
-                <input
-                    type="range"
-                    id="volumeSlider"
-                    min="0"
-                    max="100"
-                    value="40"
-                >
-
-        </div>
+   
 
         <nav class="nav-links">
 
@@ -62,6 +51,12 @@
         <a href="embreve.html" class="login-button">
             Entrar
         </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
     </div>
 
@@ -299,7 +294,7 @@
                         Doomsday pode indicar grande conexão
                     </h3>
 
-                    <a href="embreve.html">
+                    <a href="noticia.html?id=tres-bruxas-destino">
                         Ler notícia →
                     </a>
 
@@ -326,7 +321,7 @@
                         nas teorias dos fãs
                     </h3>
 
-                    <a href="embreve.html">
+                    <a href="noticia.html?id=doom-teorias">
                         Ler notícia →
                     </a>
 
@@ -353,7 +348,7 @@
                         do próximo crossover?
                     </h3>
 
-                    <a href="embreve.html">
+                    <a href="noticia.html?id=proximo-crossover">
                         Ler notícia →
                     </a>
 
@@ -710,6 +705,19 @@
 
         </div>
 
+        <div class="volume-control">
+
+             <span class="volume-icon"><img id="voluu" src="img/volume.png" alt=""></span>
+
+                <input
+                    type="range"
+                    id="volumeSlider"
+                    min="0"
+                    max="100"
+                    value="40"
+                >
+        </div>
+
     </div>
 
 
@@ -723,6 +731,26 @@
 
 
 <script src="scripts.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+});
+
+// fecha o menu ao clicar em qualquer link
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
+</script>
 
 </body>
 </html>

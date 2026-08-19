@@ -208,7 +208,20 @@ if(id === "steve-mjolnir"){
 }
 
 
+// marca automaticamente o link ativo no navbar, com base na página atual
+document.addEventListener("DOMContentLoaded", () => {
+    const paginaAtual = window.location.pathname.split("/").pop() || "index.html";
 
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        const linkHref = link.getAttribute("href");
+
+        if (linkHref === paginaAtual) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+});
 
 // const audio = document.getElementById("bgMusic");
 
