@@ -1,0 +1,139 @@
+/* ===== ESTILOS ESPECÍFICOS DA PÁGINA DE EQUIPES (equipes.html) ===== */
+/* Este arquivo complementa o style.css principal do site. */
+
+.exit-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #c0392b;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    margin-left: 14px;
+    flex-shrink: 0;
+    z-index: 99999;
+    position: relative;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.exit-button:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
+}
+
+/* Fallback: em telas muito estreitas, quando o menu hamburguer aparece,
+   mantemos o X sempre visível ao lado do botão do menu */
+@media (max-width: 860px) {
+    .exit-button {
+        margin-left: 8px;
+    }
+}
+
+.team-block {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 70px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    scroll-margin-top: 100px; /* evita que o header fixo cubra o topo da seção ao rolar */
+}
+
+.team-block:last-of-type {
+    border-bottom: none;
+}
+
+.team-block.reverse {
+    grid-template-columns: 1fr 380px;
+}
+
+.team-block.reverse .team-photo {
+    order: 2;
+}
+
+.team-photo img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.team-text span.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.team-text span.tag.heroi {
+    background: rgba(52, 152, 219, 0.15);
+    color: #4aa3ff;
+    border: 1px solid rgba(74, 163, 255, 0.4);
+}
+
+.team-text span.tag.vilao {
+    background: rgba(192, 57, 43, 0.15);
+    color: #ff5b4a;
+    border: 1px solid rgba(255, 91, 74, 0.4);
+}
+
+.team-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.team-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.85;
+    margin-bottom: 14px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.team-members span {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Destaque temporário na seção que foi acessada via link do card (ver equipes.js) */
+.team-block.highlight {
+    animation: teamHighlight 1.6s ease;
+}
+
+@keyframes teamHighlight {
+    0% { background: rgba(255, 91, 74, 0.12); }
+    100% { background: transparent; }
+}
+
+@media (max-width: 860px) {
+    .team-block,
+    .team-block.reverse {
+        grid-template-columns: 1fr;
+        padding: 40px 0;
+    }
+
+    .team-block.reverse .team-photo {
+        order: 0;
+    }
+}

@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doutor Destino | Avengers Doomsday</title>
+
+    <link rel="shortcut icon" href="img/faviconDooms-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="modais.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+
+        /* =========================
+   GALERIA
+========================= */
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery-item {
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    border: 1px solid #17351f;
+
+    transition: .3s;
+}
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .4s;
+}
+
+.gallery-item:hover {
+
+    border-color: #00ff66;
+
+    box-shadow: 0 0 25px rgba(0, 255, 102, .4);
+}
+
+.gallery-item:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   MODAL DA IMAGEM
+========================= */
+
+.image-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, .94);
+
+    backdrop-filter: blur(10px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px;
+
+    z-index: 9999;
+}
+
+
+/* quando abrir */
+
+.image-modal.active {
+
+    display: flex;
+}
+
+
+/* imagem grande */
+
+.image-modal img {
+
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        0 0 30px rgba(0, 255, 102, .6),
+
+        0 0 80px rgba(0, 255, 102, .2);
+}
+
+
+/* botão X */
+
+.image-modal-close {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid #00ff66;
+
+    background: #050505;
+
+    color: #00ff66;
+
+    font-size: 35px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    transition: .3s;
+}
+
+.image-modal-close:hover {
+
+    background: #00ff66;
+
+    color: #000;
+
+    box-shadow: 0 0 25px #00ff66;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 700px) {
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+
+        height: 280px;
+    }
+
+    .image-modal {
+
+        padding: 20px;
+    }
+
+    .image-modal img {
+
+        max-width: 95vw;
+
+        max-height: 80vh;
+    }
+
+    .image-modal-close {
+
+        top: 15px;
+
+        right: 15px;
+
+        width: 45px;
+
+        height: 45px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#030504;
+            color:#fff;
+            font-family:'Inter',sans-serif;
+            overflow-x:hidden;
+        }
+
+        /* =========================
+           FUNDO
+        ========================= */
+
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+
+            background:
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(0,255,100,.08),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 85% 60%,
+                rgba(0,255,100,.06),
+                transparent 35%
+            );
+
+            pointer-events:none;
+            z-index:-1;
+        }
+
+        /* =========================
+           BOTÃO VOLTAR
+        ========================= */
+
+        .back-button{
+
+            position:fixed;
+
+            top:25px;
+            left:25px;
+
+            z-index:1000;
+
+            padding:12px 20px;
+
+            background:rgba(0,0,0,.75);
+
+            border:1px solid #00ff66;
+
+            color:#00ff66;
+
+            text-decoration:none;
+
+            border-radius:30px;
+
+            font-weight:700;
+
+            backdrop-filter:blur(10px);
+
+            transition:.3s;
+        }
+
+        .back-button:hover{
+
+            background:#00ff66;
+
+            color:#000;
+
+            box-shadow:0 0 25px #00ff66;
+
+            transform:translateY(-3px);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero{
+
+            min-height:75vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            text-align:center;
+
+            padding:120px 20px 100px;
+
+            background:
+
+            linear-gradient(
+                rgba(0,0,0,.65),
+                rgba(0,0,0,.96)
+            ),
+
+            url("img/doom-trono.png");
+
+            background-size:cover;
+
+            background-position:center;
+        }
+
+        .hero-content{
+
+            max-width:900px;
+        }
+
+        .badge{
+
+            display:inline-block;
+
+            padding:9px 20px;
+
+            border:1px solid #00ff66;
+
+            border-radius:30px;
+
+            color:#00ff66;
+
+            letter-spacing:3px;
+
+            font-size:.8rem;
+
+            margin-bottom:25px;
+
+            box-shadow:0 0 15px rgba(0,255,100,.2);
+        }
+
+        .hero h1{
+
+            font-family:'Bebas Neue',sans-serif;
+
+            font-size:7rem;
+
+            line-height:.85;
+
+            letter-spacing:3px;
+        }
+
+        .hero h1 span{
+
+            display:block;
+
+            color:#00ff66;
+
+            text-shadow:
+
+            0 0 10px #00ff66,
+            0 0 30px #00ff66;
+        }
+
+        .hero p{
+
+            margin:30px auto 0;
+
+            max-width:750px;
+
+            line-height:1.8;
+
+            color:#d5d5d5;
+
+            font-size:1.1rem;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container{
+
+            width:90%;
+
+            max-width:1200px;
+
+            margin:auto;
+        }
+
+        section{
+
+            padding:110px 0;
+        }
+
+        /* =========================
+           TÍTULOS
+        ========================= */
+
+        .section-title{
+
+            text-align:center;
+
+            margin-bottom:60px;
+        }
+
+        .section-title span{
+
+            color:#00ff66;
+
+            letter-spacing:3px;
+
+            font-size:.85rem;
+
+            font-weight:700;
+        }
+
+        .section-title h2{
+
+            margin-top:10px;
+
+            font-family:'Bebas Neue',sans-serif;
+
+            font-size:3.5rem;
+
+            letter-spacing:1px;
+        }
+
+        /* =========================
+           CARROSSEL 3D
+        ========================= */
+
+        .carousel-section{
+
+            background:#050805;
+
+            overflow:hidden;
+        }
+
+        .carousel-wrapper{
+
+            height:520px;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+        }
+
+        .carousel-3d{
+
+            position:relative;
+
+            width:250px;
+
+            height:350px;
+
+            transform-style:preserve-3d;
+
+            animation:rotate 25s linear infinite;
+        }
+
+        .carousel-3d:hover{
+
+            animation-play-state:paused;
+        }
+
+        .carousel-3d span{
+
+            position:absolute;
+
+            width:100%;
+
+            height:100%;
+
+            transform:
+
+            rotateY(calc(var(--i) * 60deg))
+
+            translateZ(470px);
+        }
+
+        .carousel-3d img{
+
+            width:100%;
+
+            height:100%;
+
+            object-fit:cover;
+
+            border-radius:18px;
+
+            border:2px solid #00ff66;
+
+            box-shadow:
+
+            0 0 20px rgba(0,255,100,.5),
+
+            0 0 60px rgba(0,255,100,.15);
+        }
+
+        @keyframes rotate{
+
+            from{
+
+                transform:
+                perspective(1500px)
+                rotateY(0deg);
+            }
+
+            to{
+
+                transform:
+                perspective(1500px)
+                rotateY(360deg);
+            }
+        }
+
+        /* =========================
+           FICHA
+        ========================= */
+
+        .ficha{
+
+            background:#080b08;
+        }
+
+        .ficha-grid{
+
+            display:grid;
+
+            grid-template-columns:1fr 1fr;
+
+            gap:60px;
+
+            align-items:center;
+        }
+
+        .ficha-image{
+
+            width:100%;
+
+            border-radius:20px;
+
+            box-shadow:
+            0 0 30px rgba(0,255,100,.25);
+        }
+
+        .ficha-box{
+
+            border:1px solid #164d29;
+
+            background:#0b110c;
+
+            border-radius:20px;
+
+            overflow:hidden;
+        }
+
+        .ficha-row{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            padding:18px 22px;
+
+            border-bottom:1px solid #16301f;
+        }
+
+        .ficha-row:last-child{
+
+            border-bottom:none;
+        }
+
+        .ficha-row span:first-child{
+
+            color:#888;
+        }
+
+        .ficha-row span:last-child{
+
+            color:#00ff66;
+
+            font-weight:700;
+
+            text-align:right;
+        }
+
+        /* =========================
+           HISTÓRIA
+        ========================= */
+
+        .historia-grid{
+
+            display:grid;
+
+            grid-template-columns:1fr 1fr;
+
+            gap:60px;
+
+            align-items:center;
+        }
+
+        .historia-grid img{
+
+            width:100%;
+
+            border-radius:20px;
+
+            box-shadow:
+            0 0 30px rgba(0,255,100,.2);
+        }
+
+        .historia-text p{
+
+            color:#ccc;
+
+            line-height:1.9;
+
+            margin-bottom:20px;
+        }
+
+        .highlight{
+
+            color:#00ff66;
+
+            font-weight:700;
+        }
+
+        /* =========================
+           LINHA DO TEMPO
+        ========================= */
+
+        .timeline{
+
+            position:relative;
+
+            max-width:900px;
+
+            margin:auto;
+        }
+
+        .timeline::before{
+
+            content:"";
+
+            position:absolute;
+
+            left:50%;
+
+            top:0;
+
+            bottom:0;
+
+            width:2px;
+
+            background:#00ff66;
+
+            box-shadow:0 0 15px #00ff66;
+        }
+
+        .timeline-item{
+
+            width:50%;
+
+            padding:25px 40px;
+
+            position:relative;
+        }
+
+        .timeline-item:nth-child(odd){
+
+            text-align:right;
+        }
+
+        .timeline-item:nth-child(even){
+
+            margin-left:50%;
+        }
+
+        .timeline-dot{
+
+            position:absolute;
+
+            width:14px;
+
+            height:14px;
+
+            background:#00ff66;
+
+            border-radius:50%;
+
+            top:35px;
+
+            box-shadow:0 0 15px #00ff66;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot{
+
+            right:-7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot{
+
+            left:-7px;
+        }
+
+        .timeline-item h3{
+
+            color:#00ff66;
+
+            margin-bottom:8px;
+        }
+
+        .timeline-item p{
+
+            color:#aaa;
+
+            line-height:1.7;
+        }
+
+        /* =========================
+           PODERES
+        ========================= */
+
+        .poderes{
+
+            background:#070a07;
+        }
+
+        .powers-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(4,1fr);
+
+            gap:20px;
+        }
+
+        .power-card{
+
+            padding:30px;
+
+            background:#0d120e;
+
+            border:1px solid #174b28;
+
+            border-radius:18px;
+
+            transition:.3s;
+        }
+
+        .power-card:hover{
+
+            transform:translateY(-8px);
+
+            border-color:#00ff66;
+
+            box-shadow:0 0 25px rgba(0,255,100,.25);
+        }
+
+        .power-icon{
+
+            font-size:2rem;
+
+            margin-bottom:15px;
+        }
+
+        .power-card h3{
+
+            color:#00ff66;
+
+            margin-bottom:12px;
+        }
+
+        .power-card p{
+
+            color:#aaa;
+
+            line-height:1.7;
+        }
+
+        /* =========================
+           HQS
+        ========================= */
+
+        .hqs-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(3,1fr);
+
+            gap:25px;
+        }
+
+        .hq-card{
+
+            background:#0c0c0c;
+
+            border-radius:18px;
+
+            overflow:hidden;
+
+            border:1px solid #1d1d1d;
+
+            transition:.3s;
+        }
+
+        .hq-card:hover{
+
+            transform:translateY(-8px);
+
+            border-color:#00ff66;
+
+            box-shadow:0 0 25px rgba(0,255,100,.2);
+        }
+
+        .hq-card img{
+
+            width:100%;
+
+            height:320px;
+
+            object-fit:cover;
+        }
+
+        .hq-content{
+
+            padding:25px;
+        }
+
+        .hq-content span{
+
+            color:#00ff66;
+
+            font-size:.75rem;
+
+            letter-spacing:2px;
+        }
+
+        .hq-content h3{
+
+            margin:10px 0;
+        }
+
+        .hq-content p{
+
+            color:#aaa;
+
+            line-height:1.6;
+        }
+
+        /* =========================
+           GOD EMPEROR
+        ========================= */
+
+        .god-doom{
+
+            background:
+
+            radial-gradient(
+                circle at center,
+                rgba(0,255,100,.12),
+                transparent 50%
+            ),
+
+            #020402;
+        }
+
+        .god-grid{
+
+            display:grid;
+
+            grid-template-columns:1fr 1fr;
+
+            gap:60px;
+
+            align-items:center;
+        }
+
+        .god-grid img{
+
+            width:100%;
+
+            border-radius:20px;
+
+            box-shadow:
+
+            0 0 30px #00ff6655,
+
+            0 0 80px #00ff6622;
+        }
+
+        .god-text p{
+
+            color:#ccc;
+
+            line-height:1.9;
+
+            margin-bottom:20px;
+        }
+
+        .god-title{
+
+            font-family:'Bebas Neue',sans-serif;
+
+            font-size:4rem;
+
+            color:#00ff66;
+
+            text-shadow:0 0 20px #00ff66;
+        }
+
+        /* =========================
+           RIVAIS
+        ========================= */
+
+        .rivals-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(3,1fr);
+
+            gap:20px;
+        }
+
+        .rival{
+
+            padding:30px;
+
+            border-left:3px solid #00ff66;
+
+            background:#0b0b0b;
+        }
+
+        .rival h3{
+
+            color:#00ff66;
+
+            margin-bottom:10px;
+        }
+
+        .rival p{
+
+            color:#aaa;
+
+            line-height:1.7;
+        }
+
+        /* =========================
+           MCU
+        ========================= */
+
+        .mcu{
+
+            background:#080b08;
+        }
+
+        .mcu-box{
+
+            max-width:900px;
+
+            margin:auto;
+
+            text-align:center;
+        }
+
+        .mcu-box p{
+
+            color:#ccc;
+
+            line-height:2;
+
+            font-size:1.1rem;
+        }
+
+        .warning{
+
+            margin-top:30px;
+
+            padding:20px;
+
+            border:1px solid #00ff66;
+
+            border-radius:15px;
+
+            color:#aaa;
+        }
+
+        /* =========================
+           TEORIAS
+        ========================= */
+
+        .theory-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:25px;
+        }
+
+        .theory{
+
+            padding:30px;
+
+            background:#0c0c0c;
+
+            border-radius:18px;
+
+            border:1px solid #193b25;
+        }
+
+        .theory span{
+
+            color:#00ff66;
+
+            font-size:.75rem;
+
+            letter-spacing:2px;
+        }
+
+        .theory h3{
+
+            margin:12px 0;
+        }
+
+        .theory p{
+
+            color:#aaa;
+
+            line-height:1.7;
+        }
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .gallery{
+
+            background:#050805;
+        }
+
+        .gallery-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(3,1fr);
+
+            gap:20px;
+        }
+
+        .gallery-grid img{
+
+            width:100%;
+
+            height:300px;
+
+            object-fit:cover;
+
+            border-radius:15px;
+
+            transition:.3s;
+        }
+
+        .gallery-grid img:hover{
+
+            transform:scale(1.04);
+
+            box-shadow:0 0 25px #00ff66;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final{
+
+            padding:160px 20px;
+
+            text-align:center;
+
+            background:#000;
+        }
+
+        .final h2{
+
+            font-family:'Bebas Neue',sans-serif;
+
+            font-size:5rem;
+
+            color:#00ff66;
+
+            text-shadow:
+
+            0 0 15px #00ff66,
+
+            0 0 40px #00ff66;
+        }
+
+        .final p{
+
+            margin-top:20px;
+
+            color:#888;
+        }
+
+        .final-button{
+
+            display:inline-block;
+
+            margin-top:40px;
+
+            padding:15px 30px;
+
+            border:1px solid #00ff66;
+
+            color:#00ff66;
+
+            text-decoration:none;
+
+            border-radius:30px;
+
+            transition:.3s;
+        }
+
+        .final-button:hover{
+
+            background:#00ff66;
+
+            color:#000;
+
+            box-shadow:0 0 25px #00ff66;
+        }
+
+
+
+
+
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media(max-width:900px){
+
+            .hero h1{
+
+                font-size:4.5rem;
+            }
+
+            .ficha-grid,
+            .historia-grid,
+            .god-grid{
+
+                grid-template-columns:1fr;
+            }
+
+            .powers-grid{
+
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .hqs-grid,
+            .rivals-grid,
+            .gallery-grid{
+
+                grid-template-columns:1fr 1fr;
+            }
+
+            .carousel-3d{
+
+                width:190px;
+
+                height:270px;
+            }
+
+            .carousel-3d span{
+
+                transform:
+                rotateY(calc(var(--i) * 60deg))
+                translateZ(320px);
+            }
+
+        }
+
+        @media(max-width:600px){
+
+            .back-button{
+
+                top:15px;
+
+                left:15px;
+
+                padding:10px 15px;
+
+                font-size:.8rem;
+            }
+
+            .hero{
+
+                min-height:70vh;
+            }
+
+            .hero h1{
+
+                font-size:3.5rem;
+            }
+
+            .section-title h2{
+
+                font-size:2.5rem;
+            }
+
+            .powers-grid,
+            .hqs-grid,
+            .rivals-grid,
+            .theory-grid,
+            .gallery-grid{
+
+                grid-template-columns:1fr;
+            }
+
+            .timeline::before{
+
+                left:10px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even){
+
+                width:100%;
+
+                margin-left:0;
+
+                text-align:left;
+
+                padding-left:40px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot{
+
+                left:3px;
+
+                right:auto;
+            }
+
+            .carousel-wrapper{
+
+                height:400px;
+            }
+
+            .carousel-3d{
+
+                width:150px;
+
+                height:220px;
+            }
+
+            .carousel-3d span{
+
+                transform:
+                rotateY(calc(var(--i) * 60deg))
+                translateZ(240px);
+            }
+
+            .final h2{
+
+                font-size:3rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     BOTÃO SAIR
+========================= -->
+
+<a href="index.html" class="back-button">
+    ← Voltar ao Portal
+</a>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            DOSSIÊ ESPECIAL
+        </span>
+
+        <h1>
+            DOUTOR
+            <span>DESTINO</span>
+        </h1>
+
+        <p>
+            Cientista. Feiticeiro. Rei.
+            Conheça a história de Victor Von Doom,
+            seus maiores feitos nas HQs e o papel
+            que ele pode desempenhar em
+            Avengers: Doomsday.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CARROSSEL
+========================= -->
+
+<section class="carousel-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>GALERIA</span>
+
+            <h2>
+                O ROSTO DO DESTINO
+            </h2>
+
+        </div>
+
+        <div class="carousel-wrapper">
+
+            <div class="carousel-3d">
+
+                <span style="--i:1">
+                    <img src="img/destino-deus.png" alt="Doutor Destino">
+                </span>
+
+                <span style="--i:2">
+                    <img src="img/destino-mundo-novo.png" alt="Doutor Destino">
+                </span>
+
+                <span style="--i:3">
+                    <img src="img/destino-inferno.png" alt="Doutor Destino">
+                </span>
+
+                <span style="--i:4">
+                    <img src="img/destino-thanos.png" alt="Doutor Destino">
+                </span>
+
+                <span style="--i:5">
+                    <img src="img/destino-para.png" alt="Doutor Destino">
+                </span>
+
+                <span style="--i:6">
+                    <img src="img/destino-doomsday-trono.png" alt="Doutor Destino">
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FICHA
+========================= -->
+
+<section class="ficha">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>IDENTIDADE</span>
+
+            <h2>
+                Arquivo do Personagem
+            </h2>
+
+        </div>
+
+        <div class="ficha-grid">
+
+            <img
+                src="img/destino-detalhe.png"
+                class="ficha-image"
+                alt="Doutor Destino"
+            >
+
+            <div class="ficha-box">
+
+                <div class="ficha-row">
+                    <span>Nome</span>
+                    <span>Victor Von Doom</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Codinome</span>
+                    <span>Doutor Destino</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Origem</span>
+                    <span>Latveria</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Ocupação</span>
+                    <span>Rei / Cientista / Feiticeiro</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Primeira Aparição</span>
+                    <span>Fantastic Four #5</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Criadores</span>
+                    <span>Stan Lee & Jack Kirby</span>
+                </div>
+
+                <div class="ficha-row">
+                    <span>Principal Rival</span>
+                    <span>Reed Richards</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ORIGEM
+========================= -->
+
+<section class="historia">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>A ORIGEM</span>
+
+            <h2>
+                Antes da Máscara
+            </h2>
+
+        </div>
+
+        <div class="historia-grid">
+
+            <img
+                src="img/destino-mascara.png"
+                alt="Origem de Doutor Destino"
+            >
+
+            <div class="historia-text">
+
+                <p>
+                    Victor Von Doom nasceu em Latveria,
+                    uma pequena nação europeia.
+                </p>
+
+                <p>
+                    Desde criança demonstrou uma inteligência
+                    extraordinária. Seu interesse pela ciência
+                    cresceu ao mesmo tempo que sua ligação
+                    com a magia.
+                </p>
+
+                <p>
+                    Após perder seus pais, Victor passou a
+                    acreditar que o mundo era governado por
+                    pessoas incapazes de impedir o sofrimento.
+                </p>
+
+                <p>
+                    Para ele, a solução era simples:
+                    <span class="highlight">
+                        Victor Von Doom deveria assumir o controle.
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LINHA DO TEMPO
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>CRONOLOGIA</span>
+
+            <h2>
+                O Caminho Até Doom
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Infância</h3>
+
+                <p>
+                    Victor cresce em Latveria e desenvolve
+                    uma ligação profunda com ciência e magia.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Universidade</h3>
+
+                <p>
+                    Victor se torna um dos maiores gênios
+                    científicos de sua geração.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>O Acidente</h3>
+
+                <p>
+                    Um experimento dimensional dá errado
+                    e deixa Victor gravemente marcado.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>A Armadura</h3>
+
+                <p>
+                    Victor retorna usando uma armadura
+                    tecnológica e uma máscara de metal.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Latveria</h3>
+
+                <p>
+                    Victor assume o controle de seu país
+                    e se torna seu governante absoluto.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Doutor Destino</h3>
+
+                <p>
+                    Surge um dos maiores vilões e
+                    anti-heróis da história da Marvel.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PODERES
+========================= -->
+
+<section class="poderes">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>HABILIDADES</span>
+
+            <h2>
+                Poderes e Habilidades
+            </h2>
+
+        </div>
+
+        <div class="powers-grid">
+
+            <div class="power-card">
+
+                <div class="power-icon">🧠</div>
+
+                <h3>Intelecto</h3>
+
+                <p>
+                    Um dos maiores gênios científicos
+                    do Universo Marvel.
+                </p>
+
+            </div>
+
+            <div class="power-card">
+
+                <div class="power-icon">🟢</div>
+
+                <h3>Magia</h3>
+
+                <p>
+                    Doom possui profundo conhecimento
+                    das artes místicas.
+                </p>
+
+            </div>
+
+            <div class="power-card">
+
+                <div class="power-icon">⚔️</div>
+
+                <h3>Combate</h3>
+
+                <p>
+                    Sua armadura aumenta suas capacidades
+                    físicas e ofensivas.
+                </p>
+
+            </div>
+
+            <div class="power-card">
+
+                <div class="power-icon">👑</div>
+
+                <h3>Liderança</h3>
+
+                <p>
+                    Governa Latveria e possui enorme
+                    capacidade estratégica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HQS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MARVEL COMICS</span>
+
+            <h2>
+                Doom nas HQs
+            </h2>
+
+        </div>
+
+        <div class="hqs-grid">
+
+            <!-- SECRET WARS -->
+
+            <article
+                class="hq-card"
+                onclick="abrirHQ('secret-wars')"
+            >
+
+                <img
+                    src="img/dooms-war.png"
+                    alt="Secret Wars"
+                >
+
+                <div class="hq-content">
+
+                    <span>HISTÓRIA</span>
+
+                    <h3>
+                        Secret Wars
+                    </h3>
+
+                    <p>
+                        Uma das histórias mais importantes
+                        envolvendo o Doutor Destino.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="event.stopPropagation(); abrirHQ('secret-wars')"
+                    >
+                        VER HISTÓRIA →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOOKS OF DOOM -->
+
+            <article
+                class="hq-card"
+                onclick="abrirHQ('books-of-doom')"
+            >
+
+                <img
+                    src="img/the-book.png"
+                    alt="Books of Doom"
+                >
+
+                <div class="hq-content">
+
+                    <span>ORIGEM</span>
+
+                    <h3>
+                        Books of Doom
+                    </h3>
+
+                    <p>
+                        Uma visão aprofundada da vida
+                        e da transformação de Victor.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="event.stopPropagation(); abrirHQ('books-of-doom')"
+                    >
+                        VER HISTÓRIA →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TRIUMPH AND TORMENT -->
+
+            <article
+                class="hq-card"
+                onclick="abrirHQ('triumph-and-torment')"
+            >
+
+                <img
+                    src="img/doom-mefisto.png"
+                    alt="Doom Triumph and Torment"
+                >
+
+                <div class="hq-content">
+
+                    <span>MAGIA</span>
+
+                    <h3>
+                        Triumph and Torment
+                    </h3>
+
+                    <p>
+                        Uma história que explora
+                        profundamente o lado místico de Doom.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="event.stopPropagation(); abrirHQ('triumph-and-torment')"
+                    >
+                        VER HISTÓRIA →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div
+    class="modal"
+    id="hqModal"
+>
+
+    <div class="modal-box hq-modal">
+
+        <button
+            class="modal-close"
+            onclick="fecharModal()"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+
+        <div class="hq-modal-image">
+
+            <img
+                id="modalHQImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="hq-modal-content">
+
+            <span id="modalHQCategory">
+                HISTÓRIA
+            </span>
+
+            <h2 id="modalHQTitle">
+                Secret Wars
+            </h2>
+
+            <p
+                id="modalHQYear"
+                class="hq-year"
+            >
+            </p>
+
+            <p id="modalHQText">
+            </p>
+
+
+            <div class="hq-important">
+
+                <strong>
+                    POR QUE ESSA HQ É IMPORTANTE?
+                </strong>
+
+                <p id="modalHQImportance">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GOD EMPEROR
+========================= -->
+
+<section class="god-doom">
+
+    <div class="container">
+
+        <div class="god-grid">
+
+            <img
+                src="img/doom-deus.png"
+                alt="God Emperor Doom"
+            >
+
+            <div class="god-text">
+
+                <span>
+                    SECRET WARS
+                </span>
+
+                <h2 class="god-title">
+                    GOD EMPEROR DOOM
+                </h2>
+
+                <p>
+                    Uma das versões mais poderosas
+                    de Victor Von Doom.
+                </p>
+
+                <p>
+                    Após conquistar poderes de escala
+                    quase divina, Doom cria Battleworld
+                    e passa a governar diferentes
+                    realidades sob seu domínio.
+                </p>
+
+                <p>
+                    Para os fãs, essa história é uma
+                    das maiores possibilidades de inspiração
+                    para o futuro cinematográfico da Marvel.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RIVAIS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>CONFRONTOS</span>
+
+            <h2>
+                Os Grandes Rivais
+            </h2>
+
+        </div>
+
+        <div class="rivals-grid">
+
+            <div class="rival">
+
+                <h3>Reed Richards</h3>
+
+                <p>
+                    O maior rival intelectual de Doom.
+                    Uma disputa entre dois dos maiores
+                    gênios da Marvel.
+                </p>
+
+            </div>
+
+            <div class="rival">
+
+                <h3>Homem de Ferro</h3>
+
+                <p>
+                    Tony Stark e Victor representam
+                    duas visões completamente diferentes
+                    sobre ciência e poder.
+                </p>
+
+            </div>
+
+            <div class="rival">
+
+                <h3>Doutor Estranho</h3>
+
+                <p>
+                    Um confronto entre dois mestres
+                    da ciência e das artes místicas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MCU
+========================= -->
+
+<section class="mcu">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MARVEL STUDIOS</span>
+
+            <h2>
+                Doutor Destino no MCU
+            </h2>
+
+        </div>
+
+        <div class="mcu-box">
+
+            <p>
+                Avengers: Doomsday coloca o Doutor Destino
+                no centro de um dos maiores eventos da
+                história do Universo Cinematográfico Marvel.
+            </p>
+
+            <p>
+                A presença de diferentes grupos de heróis,
+                o multiverso e os eventos relacionados às
+                próximas guerras podem colocar Victor
+                diretamente contra alguns dos maiores
+                personagens da Marvel.
+            </p>
+
+            <div class="warning">
+
+                ⚠️
+                <strong>
+                    ATENÇÃO:
+                </strong>
+
+                Algumas informações sobre o futuro
+                do personagem são teorias da comunidade
+                e não devem ser tratadas como fatos oficiais.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TEORIAS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>COMUNIDADE</span>
+
+            <h2>
+                Teorias Sobre Doom
+            </h2>
+
+        </div>
+
+        <div class="theory-grid">
+
+            <article class="theory">
+
+                <span>TEORIA #01</span>
+
+                <h3>
+                    Doom pode criar Battleworld
+                </h3>
+
+                <p>
+                    Uma possibilidade é que o personagem
+                    tente reconstruir a realidade sob
+                    seu próprio controle.
+                </p>
+
+            </article>
+
+
+            <article class="theory">
+
+                <span>TEORIA #02</span>
+
+                <h3>
+                    Reed Richards será fundamental
+                </h3>
+
+                <p>
+                    A rivalidade entre Reed e Doom pode
+                    ser um dos principais conflitos
+                    da história.
+                </p>
+
+            </article>
+
+
+            <article class="theory">
+
+                <span>TEORIA #03</span>
+
+                <h3>
+                    O multiverso pode entrar em colapso
+                </h3>
+
+                <p>
+                    Eventos envolvendo diferentes
+                    realidades podem levar os heróis
+                    a uma guerra multiversal.
+                </p>
+
+            </article>
+
+
+            <article class="theory">
+
+                <span>TEORIA #04</span>
+
+                <h3>
+                    Secret Wars pode ser o próximo passo
+                </h3>
+
+                <p>
+                    A história dos quadrinhos pode
+                    servir como inspiração para uma
+                    futura grande conclusão.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERIA
+========================= -->
+
+<section class="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>IMAGENS</span>
+
+            <h2>
+                Galeria do Destino
+            </h2>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria1.png')">
+                <img src="img/doom-galeria1.png" alt="Doutor Destino">
+            </div>
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria2.png')">
+                <img src="img/doom-galeria2.png" alt="Doutor Destino">
+            </div>
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria3.png')">
+                <img src="img/doom-galeria3.png" alt="Doutor Destino">
+            </div>
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria4.png')">
+                <img src="img/doom-galeria4.png" alt="Doutor Destino">
+            </div>
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria5.png')">
+                <img src="img/doom-galeria5.png" alt="Doutor Destino">
+            </div>
+
+            <div class="gallery-item" onclick="abrirImagem('img/doom-galeria6.png')">
+                <img src="img/doom-galeria6.png" alt="Doutor Destino">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL DA GALERIA -->
+
+<div class="image-modal" id="imageModal">
+
+    <button
+        class="image-modal-close"
+        onclick="fecharImagem()"
+        aria-label="Fechar imagem"
+    >
+        ×
+    </button>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Imagem ampliada"
+    >
+
+</div>
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <h2>
+        O DESTINO ESTÁ CHEGANDO.
+    </h2>
+
+    <p>
+        E talvez o universo nunca mais seja o mesmo.
+    </p>
+
+    <a
+        href="index.html"
+        class="final-button"
+    >
+        ← VOLTAR AO PORTAL
+    </a>
+
+</section>
+
+
+<script>
+
+const hqs = {
+
+    "secret-wars": {
+
+        categoria: "HISTÓRIA",
+
+        titulo: "Secret Wars",
+
+        ano: "1984 / 1985",
+
+        imagem: "img/dooms-war.png",
+
+        texto:
+        "Secret Wars é uma das histórias mais importantes " +
+        "da Marvel envolvendo o Doutor Destino. Durante o " +
+        "evento, Victor busca alcançar um nível de poder " +
+        "extraordinário e se envolve diretamente com forças " +
+        "capazes de alterar a realidade.",
+
+        importancia:
+        "A história é fundamental para entender a ambição " +
+        "de Doom e sua obsessão por obter poder suficiente " +
+        "para controlar aquilo que considera estar fora " +
+        "do controle dos seres humanos."
+    },
+
+
+    "books-of-doom": {
+
+        categoria: "ORIGEM",
+
+        titulo: "Books of Doom",
+
+        ano: "2005 / 2006",
+
+        imagem: "img/the-book.png",
+
+        texto:
+        "Books of Doom apresenta uma visão aprofundada da " +
+        "vida de Victor Von Doom. A história acompanha sua " +
+        "infância em Latveria, sua relação com a ciência, " +
+        "a magia e os acontecimentos que ajudaram a formar " +
+        "o homem por trás da máscara.",
+
+        importancia:
+        "É uma das melhores histórias para conhecer Victor " +
+        "Von Doom como personagem e entender de onde vêm " +
+        "sua arrogância, sua determinação e sua necessidade " +
+        "de controlar o próprio destino."
+    },
+
+
+    "triumph-and-torment": {
+
+        categoria: "MAGIA",
+
+        titulo: "Triumph and Torment",
+
+        ano: "1989",
+
+        imagem: "img/doom-mefisto.png",
+
+        texto:
+        "Triumph and Torment coloca Doutor Destino ao lado " +
+        "do Doutor Estranho em uma história envolvendo " +
+        "magia, almas e o domínio de forças sobrenaturais.",
+
+        importancia:
+        "Essa história mostra um lado diferente de Doom. " +
+        "Além de ser um dos maiores cientistas da Marvel, " +
+        "Victor também possui um conhecimento extremamente " +
+        "profundo sobre magia e forças místicas."
+    }
+
+};
+
+
+/* =========================
+   ABRIR HQ
+========================= */
+
+function abrirHQ(id) {
+
+    const hq = hqs[id];
+
+    if (!hq) return;
+
+    document.getElementById("modalHQImage").src =
+        hq.imagem;
+
+    document.getElementById("modalHQImage").alt =
+        hq.titulo;
+
+    document.getElementById("modalHQCategory").textContent =
+        hq.categoria;
+
+    document.getElementById("modalHQTitle").textContent =
+        hq.titulo;
+
+    document.getElementById("modalHQYear").textContent =
+        hq.ano;
+
+    document.getElementById("modalHQText").textContent =
+        hq.texto;
+
+    document.getElementById("modalHQImportance").textContent =
+        hq.importancia;
+
+    document.getElementById("hqModal").classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* =========================
+   FECHAR MODAL
+========================= */
+
+function fecharModal() {
+
+    document.getElementById("hqModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+/* =========================
+   ESC
+========================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        fecharModal();
+
+    }
+
+});
+
+
+/* =========================
+   CLICAR FORA
+========================= */
+
+document.getElementById("hqModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            fecharModal();
+
+        }
+
+    });
+
+
+
+
+</script>
+<script>
+
+    // código das HQs
+
+</script>
+
+
+<script>
+
+    // código da GALERIA
+
+    function abrirImagem(imagem) {
+
+        const modal = document.getElementById("imageModal");
+
+        const imagemModal = document.getElementById("modalImage");
+
+        imagemModal.src = imagem;
+
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function fecharImagem() {
+
+        const modal = document.getElementById("imageModal");
+
+        modal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        document.getElementById("modalImage").src = "";
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            fecharImagem();
+
+        }
+
+    });
+
+
+    document.getElementById("imageModal").addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+
+                fecharImagem();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
+
+
+</body>
+
+</html>
