@@ -1,47 +1,101 @@
 /* ==========================================================
    TEORIAS.CSS
-   Estilos específicos da página de Teorias.
-   Reutiliza as variáveis e classes globais definidas em style.css
-   (navbar, section, dark-section, news-filters, pagination, footer).
+   Página de Teorias
+   Paleta: preto + verde místico + cinza
    ========================================================== */
 
-.teorias-hero span {
-    color: var(--gold, #d4af37);
+:root {
+    --teoria-bg: #080808;
+    --teoria-panel: #0d0d0d;
+    --teoria-panel-alt: #111111;
+
+    --teoria-green: #00ff66;
+    --teoria-green-dark: #00c853;
+    --teoria-green-soft: rgba(0, 255, 102, 0.12);
+
+    --teoria-line: rgba(0, 255, 102, 0.18);
+
+    --teoria-text: #ffffff;
+    --teoria-muted: #9a9a9a;
 }
 
-/* ---------- Teoria em destaque ---------- */
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.teorias-hero span {
+    color: var(--teoria-green);
+}
+
+
+/* ==========================================================
+   TEORIA EM DESTAQUE
+========================================================== */
 
 .featured-theory {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
+
     gap: 40px;
     align-items: center;
+
     text-decoration: none;
     color: inherit;
-    background: var(--navy-light, #131a2b);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: var(--teoria-panel);
+
+    border: 1px solid var(--teoria-line);
+
     border-radius: 16px;
+
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .featured-theory:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+    border-color: rgba(0, 255, 102, 0.45);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 102, 0.06);
 }
+
+
+/* IMAGEM */
 
 .featured-theory-img {
     position: relative;
+
     height: 100%;
     min-height: 320px;
+
+    overflow: hidden;
 }
 
 .featured-theory-img img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
+    transition: transform 0.4s ease;
 }
+
+.featured-theory:hover .featured-theory-img img {
+    transform: scale(1.04);
+}
+
+
+/* CONTEÚDO */
 
 .featured-theory-content {
     padding: 32px 40px 32px 0;
@@ -49,236 +103,368 @@
 
 .featured-theory-content > span {
     display: inline-block;
+
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--gold, #d4af37);
+
+    letter-spacing: 1.5px;
+
+    color: var(--teoria-green);
+
     margin-bottom: 12px;
 }
 
 .featured-theory-content h2 {
     font-size: 28px;
+
     line-height: 1.25;
+
     margin-bottom: 16px;
+
+    color: var(--teoria-text);
 }
 
 .featured-theory-content p {
-    color: var(--gray, #9aa1ad);
+    color: var(--teoria-muted);
+
     line-height: 1.6;
+
     margin-bottom: 20px;
 }
 
+
+/* META */
+
 .featured-theory-meta {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     font-size: 13px;
-    color: var(--gray, #9aa1ad);
+
+    color: var(--teoria-muted);
 }
 
-/* ---------- Selo de credibilidade ---------- */
+.theory-author {
+    color: var(--teoria-green);
+}
+
+
+/* ==========================================================
+   SELO DE CREDIBILIDADE
+========================================================== */
 
 .credibility-tag {
     position: absolute;
+
     top: 16px;
     left: 16px;
+
     padding: 6px 12px;
+
     border-radius: 999px;
+
     font-size: 11px;
     font-weight: 700;
+
     letter-spacing: 0.5px;
+
     text-transform: uppercase;
-    backdrop-filter: blur(4px);
+
+    backdrop-filter: blur(6px);
 }
+
+
+/* ALTA */
 
 .credibility-alta {
-    background: rgba(46, 204, 113, 0.15);
-    color: #2ecc71;
-    border: 1px solid rgba(46, 204, 113, 0.4);
+    background: rgba(0, 255, 102, 0.14);
+
+    color: var(--teoria-green);
+
+    border: 1px solid rgba(0, 255, 102, 0.4);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 102, 0.08);
 }
+
+
+/* MÉDIA */
 
 .credibility-media {
-    background: rgba(241, 196, 15, 0.15);
-    color: #f1c40f;
-    border: 1px solid rgba(241, 196, 15, 0.4);
+    background: rgba(255, 190, 50, 0.12);
+
+    color: #ffc83d;
+
+    border: 1px solid rgba(255, 190, 50, 0.35);
 }
+
+
+/* BAIXA */
 
 .credibility-baixa {
-    background: rgba(231, 76, 60, 0.15);
-    color: #e74c3c;
-    border: 1px solid rgba(231, 76, 60, 0.4);
+    background: rgba(255, 70, 70, 0.12);
+
+    color: #ff5555;
+
+    border: 1px solid rgba(255, 70, 70, 0.35);
 }
 
-/* ---------- Grade de teorias ---------- */
+
+/* ==========================================================
+   GRADE DE TEORIAS
+========================================================== */
 
 .theory-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 24px;
+
     margin-top: 40px;
 }
 
+
 .theory-card {
-    background: var(--navy-light, #131a2b);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--teoria-panel);
+
+    border: 1px solid rgba(0, 255, 102, 0.12);
+
     border-radius: 14px;
+
     overflow: hidden;
+
     display: flex;
+
     flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .theory-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+
+    border-color: rgba(0, 255, 102, 0.35);
+
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(0, 255, 102, 0.05);
 }
+
+
+/* IMAGEM DO CARD */
 
 .theory-card-img {
     position: relative;
+
     height: 180px;
+
+    overflow: hidden;
 }
 
 .theory-card-img img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
+    transition: transform 0.4s ease;
 }
+
+.theory-card:hover .theory-card-img img {
+    transform: scale(1.04);
+}
+
+
+/* CONTEÚDO */
 
 .theory-content {
     padding: 20px;
+
     display: flex;
+
     flex-direction: column;
+
     flex: 1;
 }
 
 .theory-content h3 {
     font-size: 18px;
+
     line-height: 1.35;
+
     margin-bottom: 10px;
+
+    color: var(--teoria-text);
 }
 
 .theory-excerpt {
-    color: var(--gray, #9aa1ad);
+    color: var(--teoria-muted);
+
     font-size: 14px;
+
     line-height: 1.55;
+
     margin-bottom: 16px;
+
     flex: 1;
 }
 
+
+/* ==========================================================
+   RODAPÉ DO CARD
+========================================================== */
+
 .theory-footer {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     font-size: 13px;
-    color: var(--gold, #d4af37);
+
+    color: var(--teoria-green);
+
     margin-bottom: 14px;
 }
 
 .theory-comments {
-    color: var(--gray, #9aa1ad);
+    color: var(--teoria-muted);
 }
+
+
+/* PARTE INFERIOR */
 
 .theory-bottom {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding-top: 14px;
+
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+
     font-size: 13px;
 }
 
 .theory-bottom a {
-    color: var(--gold, #d4af37);
+    color: var(--teoria-green);
+
     text-decoration: none;
+
     font-weight: 600;
+
+    transition: color 0.2s ease;
 }
 
 .theory-bottom a:hover {
+    color: #ffffff;
+
     text-decoration: underline;
 }
 
-/* ---------- Banner de envio de teoria ---------- */
+
+/* ==========================================================
+   BANNER DE ENVIO DE TEORIA
+========================================================== */
 
 .theory-submit-banner {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 24px;
-    background: linear-gradient(135deg, var(--navy-light, #131a2b), var(--navy, #0b0f1a));
-    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    background:
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(0, 255, 102, 0.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #111111,
+            #080808
+        );
+
+    border: 1px solid rgba(0, 255, 102, 0.22);
+
     border-radius: 16px;
+
     padding: 40px;
+
+    box-shadow:
+        0 0 35px rgba(0, 255, 102, 0.04);
 }
 
 .theory-submit-banner span {
     font-size: 12px;
+
     font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--gold, #d4af37);
+
+    letter-spacing: 1.5px;
+
+    color: var(--teoria-green);
 }
 
 .theory-submit-banner h2 {
     font-size: 26px;
+
     margin: 10px 0;
+
+    color: var(--teoria-text);
 }
 
 .theory-submit-banner p {
-    color: var(--gray, #9aa1ad);
+    color: var(--teoria-muted);
+
     max-width: 480px;
 }
 
-/* ---------- Responsivo ---------- */
 
-@media (max-width: 900px) {
-    .featured-theory {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-theory-content {
-        padding: 24px;
-    }
-
-    .theory-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .theory-submit-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .theory-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* =========================
+/* ==========================================================
    MODAL DE TEORIAS
-========================= */
+========================================================== */
 
 .modal-teoria {
     position: fixed;
+
     inset: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 30px;
 
-    background: rgba(0, 0, 0, 0.88);
+    background: rgba(0, 0, 0, 0.90);
 
     backdrop-filter: blur(8px);
 
     z-index: 99999;
 
     opacity: 0;
+
     visibility: hidden;
 
-    transition: opacity 0.3s ease,
-                visibility 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 
@@ -286,6 +472,7 @@
 
 .modal-teoria.active {
     opacity: 1;
+
     visibility: visible;
 }
 
@@ -294,46 +481,61 @@
 
 .modal-overlay {
     position: absolute;
+
     inset: 0;
 }
 
 
-/* JANELA */
+/* ==========================================================
+   JANELA DO MODAL
+========================================================== */
 
 .modal-box {
     position: relative;
 
     width: 100%;
+
     max-width: 900px;
 
     max-height: 90vh;
 
     overflow-y: auto;
 
-    background: #0b0b0b;
+    background:
+        linear-gradient(
+            145deg,
+            #111111,
+            #080808
+        );
 
-    border: 1px solid rgba(0, 255, 100, 0.25);
+    border: 1px solid rgba(0, 255, 102, 0.25);
 
     border-radius: 18px;
 
     box-shadow:
-        0 0 40px rgba(0, 255, 100, 0.12),
+        0 0 40px rgba(0, 255, 102, 0.12),
         0 20px 80px rgba(0, 0, 0, 0.8);
 
-    transform: translateY(30px) scale(0.97);
+    transform:
+        translateY(30px)
+        scale(0.97);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 
     z-index: 2;
 }
 
-
 .modal-teoria.active .modal-box {
-    transform: translateY(0) scale(1);
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
-/* IMAGEM */
+/* ==========================================================
+   IMAGEM DO MODAL
+========================================================== */
 
 .modal-imagem {
     width: 100%;
@@ -348,7 +550,9 @@
 }
 
 
-/* ÁREA DO TEXTO */
+/* ==========================================================
+   ÁREA DO TEXTO
+========================================================== */
 
 .modal-info {
     padding: 35px 45px 45px;
@@ -362,7 +566,7 @@
 
     margin-bottom: 10px;
 
-    color: #00ff66;
+    color: var(--teoria-green);
 
     font-size: 12px;
 
@@ -383,22 +587,26 @@
 
     border-radius: 20px;
 
-    background: rgba(0, 255, 100, 0.12);
+    background: rgba(0, 255, 102, 0.12);
 
-    color: #00ff66;
+    color: var(--teoria-green);
 
     font-size: 11px;
 
     font-weight: 800;
+
+    border: 1px solid rgba(0, 255, 102, 0.25);
 }
 
 
-/* TÍTULO */
+/* ==========================================================
+   TÍTULO DO MODAL
+========================================================== */
 
 .modal-info h2 {
     margin: 15px 0;
 
-    color: #ffffff;
+    color: var(--teoria-text);
 
     font-family: "Bebas Neue", sans-serif;
 
@@ -408,7 +616,9 @@
 }
 
 
-/* INFORMAÇÕES */
+/* ==========================================================
+   INFORMAÇÕES
+========================================================== */
 
 .modal-meta {
     display: flex;
@@ -425,7 +635,9 @@
 }
 
 
-/* TEXTO DA TEORIA */
+/* ==========================================================
+   TEXTO DA TEORIA
+========================================================== */
 
 .modal-texto {
     color: #d1d1d1;
@@ -437,36 +649,38 @@
     line-height: 1.8;
 }
 
-
 .modal-texto p {
     margin-bottom: 22px;
 }
 
-
 .modal-texto h3 {
     margin-top: 35px;
+
     margin-bottom: 15px;
 
-    color: #00ff66;
+    color: var(--teoria-green);
 
     font-size: 22px;
 }
-
 
 .modal-texto strong {
     color: #ffffff;
 }
 
 
-/* BOTÃO FECHAR */
+/* ==========================================================
+   BOTÃO FECHAR
+========================================================== */
 
 .modal-fechar {
     position: absolute;
 
     top: 15px;
+
     right: 15px;
 
     width: 42px;
+
     height: 42px;
 
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -485,41 +699,104 @@
 
     z-index: 10;
 
-    transition: 0.2s ease;
+    transition:
+        0.2s ease;
 }
 
-
 .modal-fechar:hover {
-    background: #00ff66;
+    background: var(--teoria-green);
 
     color: #000000;
 
+    border-color: var(--teoria-green);
+
     transform: rotate(90deg);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 102, 0.35);
 }
 
 
-/* BARRA DE ROLAGEM */
+/* ==========================================================
+   BARRA DE ROLAGEM
+========================================================== */
 
 .modal-box::-webkit-scrollbar {
     width: 7px;
 }
 
-
 .modal-box::-webkit-scrollbar-track {
     background: #080808;
 }
 
-
 .modal-box::-webkit-scrollbar-thumb {
-    background: #00ff66;
+    background: var(--teoria-green);
 
     border-radius: 10px;
 }
 
+.modal-box::-webkit-scrollbar-thumb:hover {
+    background: #00d957;
+}
 
-/* =========================
-   CELULAR
-========================= */
+
+/* ==========================================================
+   EFEITO DE LINHA VERDE
+========================================================== */
+
+.featured-theory::before,
+.theory-card::before,
+.theory-submit-banner::before {
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .featured-theory {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-theory-content {
+        padding: 24px;
+    }
+
+    .theory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .theory-submit-banner {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .theory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-theory-img {
+        min-height: 240px;
+    }
+
+    .featured-theory-content h2 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ==========================================================
+   MODAL — CELULAR
+========================================================== */
 
 @media (max-width: 700px) {
 
@@ -527,21 +804,17 @@
         padding: 10px;
     }
 
-
     .modal-imagem {
         height: 230px;
     }
-
 
     .modal-info {
         padding: 25px 22px 35px;
     }
 
-
     .modal-info h2 {
         font-size: 32px;
     }
-
 
     .modal-texto {
         font-size: 15px;

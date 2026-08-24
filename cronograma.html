@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cronograma | Vingadores: Doomsday</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cronograma.css">
+    <link rel="shortcut icon" href="img/faviconDooms-32x32.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-doom.png" alt="Avengers Doomsday">
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Início</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="personagens.html">Personagens</a>
+            <a href="teorias.html">Teorias</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="trailer.html">Trailer</a>
+            <a href="cronograma.html" class="active">Cronograma</a>
+            <a href="embreve.html">Produtos</a>
+            <a href="embreve.html">Membros</a>
+
+        </nav>
+
+        <a href="embreve.html" class="login-button">
+            Entrar
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- HERO CRONOGRAMA -->
+
+<section class="cr-hero">
+
+    <div class="cr-hero-content">
+
+        <span class="cr-eyebrow">
+            TUDO O QUE FALTA ATÉ A ESTREIA
+        </span>
+
+        <h1>
+            CRONO<span>GRAMA</span>
+        </h1>
+
+        <p>
+            Acompanhe cada etapa do caminho até Vingadores:
+            Doomsday chegar aos cinemas — e organize sua
+            maratona pessoal antes do grande dia.
+        </p>
+
+        <!-- CONTAGEM -->
+        <div class="countdown cr-countdown">
+
+            <div class="count-box">
+                <strong id="crDays">00</strong>
+                <span>Dias</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="crHours">00</strong>
+                <span>Horas</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="crMinutes">00</strong>
+                <span>Minutos</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="crSeconds">00</strong>
+                <span>Segundos</span>
+            </div>
+
+        </div>
+
+        <span class="cr-premiere-date">Estreia: 18 de dezembro de 2026</span>
+
+    </div>
+
+</section>
+
+
+<!-- MARATONA OFICIAL (ESPAÇO PARA FOTO) -->
+
+<section class="cr-section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>🎬 MARATONA</span>
+            <h2>O que assistir até Doomsday</h2>
+        </div>
+
+        <p class="cr-marathon-intro">
+            A ordem oficial de exibição sugerida pela comunidade
+            para chegar em Doomsday sem perder nenhuma conexão.
+            Clique na imagem para ampliar.
+        </p>
+
+        <div class="cr-marathon-frame" id="marathonFrame" role="button" tabindex="0" aria-label="Ampliar imagem da ordem de maratona">
+
+            <!--
+                TROQUE A IMAGEM ABAIXO PELA ARTE COM A ORDEM
+                DOS FILMES QUE PRECISAM SER ASSISTIDOS ATÉ DOOMSDAY
+            -->
+            <img
+                src="img/lista-de-filmes.png"
+                alt="Ordem de maratona dos filmes até Vingadores: Doomsday"
+                id="marathonImg"
+            >
+
+            <div class="cr-marathon-zoom">
+                <span>🔍 Ampliar</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LIGHTBOX DA IMAGEM -->
+
+<div class="cr-lightbox" id="marathonLightbox">
+    <button class="cr-lightbox-close" id="lightboxClose" aria-label="Fechar imagem ampliada">✕</button>
+    <img src="img/lista-de-filmes.png" alt="Ordem de maratona ampliada" id="lightboxImg">
+</div>
+
+
+<!-- LINHA DO TEMPO -->
+
+<section class="cr-section dark-section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>🗓️ ATÉ A ESTREIA</span>
+            <h2>Linha do tempo</h2>
+        </div>
+
+        <div class="cr-timeline" id="crTimeline">
+
+            <div class="cr-timeline-line"></div>
+            <div class="cr-timeline-progress" id="crTimelineProgress"></div>
+            <div class="cr-timeline-here" id="crTimelineHere">
+                <span>ESTAMOS AQUI</span>
+            </div>
+
+            <!-- cada item leva data (YYYY-MM-DD) para o JS calcular a posição -->
+
+            <div class="cr-timeline-item" data-date="2024-07-27">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">JUL 2024</span>
+                    <h3>Anúncio oficial</h3>
+                    <p class="cr-timeline-desc">
+                        Na San Diego Comic-Con, a Marvel revela o título
+                        Vingadores: Doomsday e a volta de Robert Downey Jr.
+                        como Doutor Destino.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item" data-date="2025-03-26">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">MAR 2025</span>
+                    <h3>Início das filmagens</h3>
+                    <p class="cr-timeline-desc">
+                        As gravações começam oficialmente, com a
+                        confirmação de um elenco gigantesco reunindo
+                        Vingadores, X-Men e Quarteto Fantástico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item" data-date="2026-07-20">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">JUL 2026</span>
+                    <h3>Primeiro trailer</h3>
+                    <p class="cr-timeline-desc">
+                        O trailer completo é divulgado, mostrando a
+                        Escola do Professor Xavier e o confronto que
+                        se forma entre os três grupos de heróis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item" data-date="2026-08-22">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">AGO 2026</span>
+                    <h3>Painel na Comic-Con</h3>
+                    <p class="cr-timeline-desc">
+                        O elenco sobe ao palco da Hall H para falar
+                        sobre os bastidores e soltar novos detalhes
+                        da trama.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item" data-date="2026-10-15">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">OUT 2026</span>
+                    <h3>Novos pôsteres e cenas</h3>
+                    <p class="cr-timeline-desc">
+                        Expectativa da comunidade: mais material
+                        promocional e possivelmente um segundo
+                        trailer devem chegar nesse período.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item" data-date="2026-12-10">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">DEZ 2026</span>
+                    <h3>Première mundial</h3>
+                    <p class="cr-timeline-desc">
+                        A grande première acontece dias antes da
+                        estreia oficial, com o elenco no tapete
+                        vermelho e as primeiras reações da crítica.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cr-timeline-item cr-timeline-final" data-date="2026-12-18">
+                <div class="cr-timeline-dot"></div>
+                <div class="cr-timeline-card">
+                    <span class="cr-timeline-date">18 DEZ 2026</span>
+                    <h3>Estreia nos cinemas</h3>
+                    <p class="cr-timeline-desc">
+                        O dia finalmente chega. Vingadores: Doomsday
+                        estreia mundialmente nos cinemas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CHECKLIST DE MARATONA PESSOAL -->
+
+<section class="cr-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span> SUA MARATONA</span>
+                <h2>Já assistiu esses?</h2>
+            </div>
+
+        </div>
+
+        <p class="cr-marathon-intro">
+            Marque os filmes essenciais que você já revisou.
+            Seu progresso fica salvo automaticamente neste
+            navegador.
+        </p>
+
+        <div class="cr-progress-wrap">
+            <div class="cr-progress-bar">
+                <div class="cr-progress-fill" id="crProgressFill"></div>
+            </div>
+            <span class="cr-progress-label" id="crProgressLabel">0 de 0 assistidos</span>
+        </div>
+
+        <ul class="cr-checklist" id="crChecklist">
+
+            <li data-id="guerra-infinita">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Vingadores: Guerra Infinita
+                </label>
+            </li>
+
+            <li data-id="ultimato">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Vingadores: Ultimato
+                </label>
+            </li>
+
+            <li data-id="capita-marvel">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Capitã Marvel
+                </label>
+            </li>
+
+            <li data-id="shang-chi">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Shang-Chi e a Lenda dos Dez Anéis
+                </label>
+            </li>
+
+            <li data-id="sem-volta-para-casa">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Homem-Aranha: Sem Volta Para Casa
+                </label>
+            </li>
+
+            <li data-id="multiverso-da-loucura">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Doutor Estranho no Multiverso da Loucura
+                </label>
+            </li>
+
+            <li data-id="wakanda-para-sempre">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Pantera Negra: Wakanda Para Sempre
+                </label>
+            </li>
+
+            <li data-id="guardioes-3">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Guardiões da Galáxia Vol. 3
+                </label>
+            </li>
+
+            <li data-id="deadpool-wolverine">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Deadpool &amp; Wolverine
+                </label>
+            </li>
+
+            <li data-id="admiravel-mundo-novo">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Capitão América: Admirável Mundo Novo
+                </label>
+            </li>
+
+            <li data-id="thunderbolts">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Thunderbolts*
+                </label>
+            </li>
+
+            <li data-id="quarteto-fantastico">
+                <label>
+                    <input type="checkbox">
+                    <span class="cr-check-box"></span>
+                    Quarteto Fantástico: Primeiros Passos
+                </label>
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <img
+                src="img/logo-doom.png"
+                alt="Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                Um portal independente feito por fãs
+                para fãs.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explorar
+            </h3>
+
+            <a href="noticias.html">
+                Notícias
+            </a>
+
+            <a href="teorias.html">
+                Teorias
+            </a>
+
+            <a href="personagens.html">
+                Personagens
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Projeto
+            </h3>
+
+            <a href="embreve.html">
+                Sobre
+            </a>
+
+            <a href="embreve.html">
+                Contato
+            </a>
+
+            <a href="embreve.html">
+                Apoie
+            </a>
+
+        </div>
+
+    
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Avengers Doomsday Fan Portal.
+
+    </div>
+
+</footer>
+
+
+<script src="scripts.js"></script>
+<script src="cronograma.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
+</script>
+
+</body>
+</html>

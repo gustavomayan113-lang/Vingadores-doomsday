@@ -1,0 +1,955 @@
+/* ============================================
+   CRONOGRAMA.CSS
+   Página "Cronograma" — contagem, maratona e
+   linha do tempo até a estreia de Doomsday.
+
+   PALETA:
+   Preto + Verde Neon + Branco/Cinza
+============================================ */
+
+
+/* ---------- VARIÁVEIS ---------- */
+
+:root {
+    --cr-bg: #0a0a0a;
+    --cr-panel: #111111;
+    --cr-panel-alt: #161616;
+
+    --cr-line: rgba(0, 255, 102, 0.16);
+
+    --cr-green: #00ff66;
+    --cr-green-bright: #39ff88;
+
+    --cr-text: #f5f5f5;
+    --cr-muted: #9a9a9a;
+}
+
+
+/* ---------- BOX SIZING ---------- */
+
+.cr-hero *,
+.cr-section *,
+.cr-lightbox * {
+    box-sizing: border-box;
+}
+
+
+/* ============================================
+   HERO
+============================================ */
+
+.cr-hero {
+    position: relative;
+    padding: 190px 24px 90px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% -10%,
+            rgba(0, 255, 102, 0.12),
+            transparent 60%
+        ),
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            var(--cr-bg) 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Linhas tecnológicas do fundo */
+
+.cr-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 255, 102, 0.035) 0px,
+            rgba(0, 255, 102, 0.035) 1px,
+            transparent 1px,
+            transparent 120px
+        );
+
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+
+/* Brilho verde adicional */
+
+.cr-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -350px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(0, 255, 102, 0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+.cr-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+
+.cr-eyebrow {
+    display: inline-block;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--cr-green);
+
+    margin-bottom: 18px;
+}
+
+
+.cr-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(42px, 7vw, 76px);
+
+    letter-spacing: 2px;
+
+    color: var(--cr-text);
+
+    line-height: 1;
+
+    margin: 0 0 20px;
+}
+
+
+.cr-hero h1 span {
+    color: var(--cr-green);
+
+    text-shadow:
+        0 0 20px rgba(0, 255, 102, 0.25);
+}
+
+
+.cr-hero p {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--cr-muted);
+
+    max-width: 520px;
+
+    margin: 0 auto 36px;
+}
+
+
+/* Contador */
+
+.cr-countdown {
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+
+.cr-premiere-date {
+    display: inline-block;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--cr-muted);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ============================================
+   SEÇÕES GERAIS
+============================================ */
+
+.cr-section {
+    background: var(--cr-bg);
+
+    padding: 80px 24px;
+}
+
+
+.cr-section.dark-section {
+    background: var(--cr-panel);
+}
+
+
+.cr-section .container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+.cr-marathon-intro {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14.5px;
+
+    line-height: 1.7;
+
+    color: var(--cr-muted);
+
+    max-width: 640px;
+
+    margin: -18px 0 34px;
+}
+
+
+/* ============================================
+   MARATONA / FOTO
+============================================ */
+
+.cr-marathon-frame {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--cr-line);
+
+    background: var(--cr-panel-alt);
+
+    cursor: zoom-in;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(0, 255, 102, 0.04);
+}
+
+
+.cr-marathon-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 220px;
+
+    object-fit: cover;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #151515 0px,
+            #151515 14px,
+            #101010 14px,
+            #101010 28px
+        );
+}
+
+
+/* Overlay de zoom */
+
+.cr-marathon-zoom {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+
+.cr-marathon-zoom span {
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    color: var(--cr-text);
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--cr-green);
+
+    border-radius: 999px;
+
+    background: rgba(10, 10, 10, 0.85);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 102, 0.15);
+}
+
+
+.cr-marathon-frame:hover .cr-marathon-zoom,
+.cr-marathon-frame:focus-visible .cr-marathon-zoom {
+    opacity: 1;
+}
+
+
+/* ============================================
+   LIGHTBOX
+============================================ */
+
+.cr-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 0.25s ease;
+
+    z-index: 999;
+}
+
+
+.cr-lightbox.is-open {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.cr-lightbox img {
+    max-width: min(92vw, 1000px);
+
+    max-height: 88vh;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(0, 255, 102, 0.08);
+}
+
+
+.cr-lightbox-close {
+    position: absolute;
+
+    top: 24px;
+    right: 28px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--cr-line);
+
+    background: rgba(17, 17, 17, 0.9);
+
+    color: var(--cr-text);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.cr-lightbox-close:hover {
+    border-color: var(--cr-green);
+
+    color: var(--cr-green);
+
+    transform: rotate(90deg);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 102, 0.15);
+}
+
+
+/* ============================================
+   LINHA DO TEMPO
+============================================ */
+
+.cr-timeline {
+    position: relative;
+
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    padding-left: 42px;
+}
+
+
+.cr-timeline-line {
+    position: absolute;
+
+    left: 10px;
+
+    top: 6px;
+    bottom: 6px;
+
+    width: 2px;
+
+    background: var(--cr-line);
+}
+
+
+.cr-timeline-progress {
+    position: absolute;
+
+    left: 10px;
+
+    top: 6px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--cr-green),
+            var(--cr-green-bright)
+        );
+
+    height: 0%;
+
+    transition: height 1s ease;
+
+    box-shadow:
+        0 0 8px rgba(0, 255, 102, 0.35);
+}
+
+
+/* Indicador "Você está aqui" */
+
+.cr-timeline-here {
+    position: absolute;
+
+    left: -6px;
+    top: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transform: translateY(-50%);
+
+    transition: top 1s ease;
+}
+
+
+.cr-timeline-here::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: var(--cr-green);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 255, 102, 0.15),
+        0 0 18px rgba(0, 255, 102, 0.65);
+}
+
+
+.cr-timeline-here span {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 10.5px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--cr-green);
+
+    background: rgba(10, 10, 10, 0.9);
+
+    padding: 4px 9px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(0, 255, 102, 0.35);
+
+    white-space: nowrap;
+}
+
+
+/* Item */
+
+.cr-timeline-item {
+    position: relative;
+
+    padding-bottom: 46px;
+}
+
+
+.cr-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* Bolinha */
+
+.cr-timeline-dot {
+    position: absolute;
+
+    left: -42px;
+
+    top: 4px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: var(--cr-panel-alt);
+
+    border: 2px solid var(--cr-green);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.cr-timeline-item.is-past .cr-timeline-dot {
+    background: var(--cr-green);
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 102, 0.35);
+}
+
+
+.cr-timeline-item.cr-timeline-final .cr-timeline-dot {
+    border-color: var(--cr-green);
+
+    background: var(--cr-green);
+
+    width: 16px;
+    height: 16px;
+
+    left: -44px;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 255, 102, 0.12),
+        0 0 20px rgba(0, 255, 102, 0.5);
+}
+
+
+/* ============================================
+   CARDS DA TIMELINE
+============================================ */
+
+.cr-timeline-card {
+    background: var(--cr-panel-alt);
+
+    border: 1px solid var(--cr-line);
+
+    border-radius: 10px;
+
+    padding: 18px 20px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.cr-timeline-card:hover {
+    border-color: rgba(0, 255, 102, 0.45);
+
+    transform: translateX(4px);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.05);
+}
+
+
+.cr-timeline-date {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--cr-green);
+}
+
+
+.cr-timeline-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 21px;
+
+    letter-spacing: 0.5px;
+
+    color: var(--cr-text);
+
+    margin: 6px 0;
+
+    line-height: 1.15;
+}
+
+
+.cr-timeline-desc {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13.5px;
+
+    line-height: 1.6;
+
+    color: var(--cr-muted);
+
+    margin: 0;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.3s ease,
+        margin-top 0.35s ease;
+}
+
+
+.cr-timeline-item.is-open .cr-timeline-desc {
+    max-height: 200px;
+
+    opacity: 1;
+
+    margin-top: 8px;
+}
+
+
+/* Card final */
+
+.cr-timeline-final .cr-timeline-card {
+    border-color: rgba(0, 255, 102, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.04);
+}
+
+
+.cr-timeline-final .cr-timeline-date {
+    color: var(--cr-green);
+}
+
+
+/* ============================================
+   PROGRESSO / CHECKLIST
+============================================ */
+
+.cr-progress-wrap {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 36px;
+}
+
+
+.cr-progress-bar {
+    flex: 1;
+
+    height: 10px;
+
+    border-radius: 999px;
+
+    background: var(--cr-panel-alt);
+
+    border: 1px solid var(--cr-line);
+
+    overflow: hidden;
+}
+
+
+.cr-progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cr-green),
+            var(--cr-green-bright)
+        );
+
+    transition: width 0.4s ease;
+
+    box-shadow:
+        0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+
+.cr-progress-label {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12.5px;
+
+    font-weight: 600;
+
+    color: var(--cr-muted);
+
+    white-space: nowrap;
+}
+
+
+/* ============================================
+   CHECKLIST
+============================================ */
+
+.cr-checklist {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(260px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+
+.cr-checklist li {
+    background: var(--cr-panel-alt);
+
+    border: 1px solid var(--cr-line);
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.cr-checklist li:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    transform: translateY(-2px);
+}
+
+
+.cr-checklist li:has(input:checked) {
+    border-color: rgba(0, 255, 102, 0.4);
+
+    background: rgba(0, 255, 102, 0.05);
+}
+
+
+.cr-checklist label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    cursor: pointer;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: var(--cr-text);
+}
+
+
+.cr-checklist input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+
+/* Checkbox */
+
+.cr-check-box {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 5px;
+
+    border: 1.5px solid var(--cr-line);
+
+    background: var(--cr-bg);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.cr-check-box::after {
+    content: "";
+
+    width: 10px;
+    height: 6px;
+
+    border-left: 2px solid #0a0a0a;
+
+    border-bottom: 2px solid #0a0a0a;
+
+    transform:
+        rotate(-45deg)
+        scale(0);
+
+    transition:
+        transform 0.15s ease;
+}
+
+
+.cr-checklist input:checked + .cr-check-box {
+    background: var(--cr-green);
+
+    border-color: var(--cr-green);
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 102, 0.25);
+}
+
+
+.cr-checklist input:checked + .cr-check-box::after {
+    transform:
+        rotate(-45deg)
+        scale(1);
+}
+
+
+.cr-checklist input:checked ~ * {
+    text-decoration: line-through;
+
+    color: var(--cr-muted);
+}
+
+
+/* ============================================
+   RESPONSIVO
+============================================ */
+
+@media (max-width: 640px) {
+
+    .cr-hero {
+        padding: 150px 20px 60px;
+    }
+
+
+    .cr-section {
+        padding: 56px 20px;
+    }
+
+
+    .cr-timeline {
+        padding-left: 34px;
+    }
+
+
+    .cr-timeline-dot {
+        left: -34px;
+    }
+
+
+    .cr-timeline-here {
+        left: -8px;
+    }
+
+
+    .cr-checklist {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cr-hero h1 {
+        font-size: clamp(40px, 12vw, 58px);
+    }
+
+
+    .cr-hero p {
+        font-size: 14px;
+    }
+}
