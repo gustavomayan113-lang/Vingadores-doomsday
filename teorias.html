@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teorias | Avengers: Doomsday</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teorias.css">
+    <link rel="shortcut icon" href="img/faviconDooms-32x32.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teorias.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="img/logo-doom.png" alt="Avengers Doomsday">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="personagens.html">Personagens</a>
+            <a href="teorias.html" class="active">Teorias</a>
+            <a href="embreve.html">Filmes</a>
+            <a href="trailer.html">Trailer</a>
+            <a href="embreve.html">Cronograma</a>
+            <a href="embreve.html">Produtos</a>
+            <a href="embreve.html">Membros</a>
+        </nav>
+
+        <a href="embreve.html" class="login-button">
+            Entrar
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="news-hero teorias-hero">
+
+    <div class="container">
+
+        <span>ESPECULAÇÃO DA COMUNIDADE</span>
+
+        <h1>
+            TEORIAS DOS
+            <strong>FÃS</strong>
+        </h1>
+
+        <p>
+            Análises, pistas escondidas e especulações sobre o que está
+            por vir em Avengers: Doomsday, feitas pela comunidade.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+       <a href="#" class="featured-theory abrir-modal" data-id="destino-multiverso">
+
+            <div class="featured-theory-img">
+                <img src="img/destino-manipulando.png" alt="Teoria em destaque">
+                <span class="credibility-tag credibility-alta">ALTA CREDIBILIDADE</span>
+            </div>
+
+            <div class="featured-theory-content">
+
+                <span>TEORIA EM DESTAQUE</span>
+
+                <h2>
+                    Doutor Destino pode estar manipulando
+                    múltiplas variantes ao mesmo tempo
+                </h2>
+
+                <p>
+                    Analisando as pistas do trailer, fãs acreditam que Destino
+                    não é apenas um vilão isolado, mas sim uma peça de um plano
+                    muito maior envolvendo o multiverso inteiro.
+                </p>
+
+                <div class="featured-theory-meta">
+                    <span class="theory-author">por @teoriaverse</span>
+                    <span>·</span>
+                    <span>17 Ago 2026</span>
+                    <span>·</span>
+                    <span>142 comentários</span>
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <div class="news-filters" id="teoriasFilters">
+            <button class="filter-chip active" data-categoria="todas">Todas</button>
+            <button class="filter-chip" data-categoria="destino">Doutor Destino</button>
+            <button class="filter-chip" data-categoria="multiverso">Multiverso</button>
+            <button class="filter-chip" data-categoria="x-men">X-Men</button>
+            <button class="filter-chip" data-categoria="vingadores">Vingadores</button>
+            <button class="filter-chip" data-categoria="finale">Final do Filme</button>
+        </div>
+
+        <div class="theory-grid" id="theoryGrid">
+            <!-- as teorias serão inseridas aqui via JS -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- os botões serão inseridos aqui via JS -->
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="theory-submit-banner">
+
+            <div>
+
+                <span>TEM UMA TEORIA?</span>
+
+                <h2>
+                    Compartilhe sua ideia com a comunidade.
+                </h2>
+
+                <p>
+                    Envie sua teoria e, se for aprovada, ela pode aparecer
+                    aqui na página.
+                </p>
+
+            </div>
+
+            <a href="embreve.html" class="primary-button">
+                ENVIAR TEORIA
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <img
+                src="img/logo-doom.png"
+                alt="Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                Um portal independente feito por fãs,
+                para fãs.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Explorar</h3>
+
+            <a href="noticias.html">Notícias</a>
+            <a href="teorias.html">Teorias</a>
+            <a href="personagens.html">Personagens</a>
+
+        </div>
+
+        <div>
+
+            <h3>Projeto</h3>
+
+            <a href="embreve.html">Sobre</a>
+            <a href="embreve.html">Contato</a>
+            <a href="embreve.html">Apoie</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Avengers Doomsday Fan Portal.
+    </div>
+
+</footer>
+
+<div class="modal-teoria" id="modalTeoria">
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-box">
+
+        <button class="modal-fechar" id="fecharModal">
+            ×
+        </button>
+
+        <img
+            id="modalImagem"
+            class="modal-imagem"
+            src=""
+            alt=""
+        >
+
+        <div class="modal-info">
+
+            <span class="modal-categoria">
+                TEORIA DOS FÃS
+            </span>
+
+            <span
+                id="modalCredibilidade"
+                class="modal-credibilidade">
+            </span>
+
+            <h2 id="modalTitulo"></h2>
+
+            <div class="modal-meta">
+
+                <span id="modalAutor"></span>
+
+                <span>•</span>
+
+                <span id="modalData"></span>
+
+                <span>•</span>
+
+                <span id="modalComentarios"></span>
+
+            </div>
+
+            <div
+                id="modalTexto"
+                class="modal-texto">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+const teorias = [
+
+    {
+        categoria: "destino",
+        img: "img/variante-ferro.png",
+        titulo: "Doutor Destino é uma variante de Tony Stark",
+        excerto: "Muitos fãs acreditam que o personagem interpretado por Robert Downey Jr. será uma variante sombria de Tony Stark que seguiu um caminho diferente no multiverso. Isso explicaria sua inteligência extraordinária e sua conexão com os Vingadores.",
+        autor: "@arcanotech",
+        data: "17 AGO 2026",
+        credibilidade: "alta",
+        comentarios: 98,
+        id: "destino-magia",
+
+        teoria: `
+            <p>
+                Uma das teorias mais comentadas entre os fãs é que
+                <strong>Doutor Destino poderia ser uma variante de Tony Stark</strong>
+                de outro universo.
+            </p>
+
+            <p>
+                A principal razão para essa teoria é a escolha de
+                <strong>Robert Downey Jr.</strong> para interpretar Victor Von Doom.
+                Depois de interpretar Tony Stark durante tantos anos no MCU,
+                seu retorno como um personagem completamente diferente poderia
+                ter uma função importante dentro da história do multiverso.
+            </p>
+
+            <h3>Como isso seria possível?</h3>
+
+            <p>
+                A teoria sugere que, em alguma realidade alternativa, Tony Stark
+                teria seguido um caminho completamente diferente. Em vez de se
+                tornar o Homem de Ferro e um dos maiores heróis da Terra,
+                ele poderia ter utilizado sua inteligência para conquistar
+                poder e se transformar em uma versão diferente de si mesmo.
+            </p>
+
+            <h3>A conexão entre os dois</h3>
+
+            <p>
+                Tony Stark e Victor Von Doom são conhecidos por sua inteligência
+                extraordinária. Uma variante de Tony poderia possuir uma
+                personalidade muito mais próxima da de Destino, acreditando que
+                somente alguém com inteligência e poder suficientes seria capaz
+                de controlar o caos do multiverso.
+            </p>
+
+            <p>
+                Se essa teoria for verdadeira, o encontro entre os heróis e
+                Destino poderia ganhar um significado muito maior, principalmente
+                para personagens que conheceram Tony Stark.
+            </p>
+        `
+    },
+
+    {
+        categoria: "finale",
+        img: "img/doutor-vence.png",
+        titulo: "Doutor Destino vencerá no final do filme",
+        excerto: "Uma teoria sugere que Victor Von Doom perceberá que o multiverso está entrando em colapso e decidirá eliminar realidades inteiras para criar uma única linha do tempo perfeita sob seu controle.",
+        autor: "@multiversal_br",
+        data: "16 AGO 2026",
+        credibilidade: "media",
+        comentarios: 64,
+        id: "doutor-destino-vencera",
+
+        teoria: `
+            <p>
+                Uma das possibilidades mais assustadoras para
+                <strong>Avengers: Doomsday</strong> é que Doutor Destino
+                realmente consiga vencer os heróis no final do filme.
+            </p>
+
+            <p>
+                Em vez de simplesmente destruir o multiverso, Victor Von Doom
+                poderia acreditar que está fazendo exatamente o contrário:
+                <strong>salvando a existência através do controle absoluto.</strong>
+            </p>
+
+            <h3>O plano de Destino</h3>
+
+            <p>
+                Com as realidades entrando em colapso, Doom poderia concluir
+                que não existe maneira de salvar todos os universos.
+                Sua solução seria eliminar determinadas realidades e reunir
+                os fragmentos restantes em uma única realidade controlada por ele.
+            </p>
+
+            <h3>Uma vitória dos vilões?</h3>
+
+            <p>
+                Isso permitiria que o filme terminasse com os heróis derrotados
+                ou separados, enquanto Destino assumiria o controle da nova
+                realidade.
+            </p>
+
+            <p>
+                Esse cenário também poderia preparar diretamente o caminho para
+                <strong>Avengers: Secret Wars</strong>, principalmente se essa
+                nova realidade tiver características semelhantes ao Battleworld.
+            </p>
+        `
+    },
+
+    {
+        categoria: "x-men",
+        img: "img/x-men-papel.png",
+        titulo: "Os X-Men terão papel fundamental na batalha final",
+        excerto: "Com a presença de personagens como Professor X, Fera, Ciclope e Magneto, muitos acreditam que os mutantes serão essenciais para impedir os planos de Destino, iniciando oficialmente a era dos X-Men no MCU.",
+        autor: "@martelodetodos",
+        data: "09 AGO 2026",
+        credibilidade: "media",
+        comentarios: 210,
+        id: "x-men-batalha-final",
+
+        teoria: `
+            <p>
+                A presença de personagens clássicos dos
+                <strong>X-Men</strong> em Avengers: Doomsday alimentou
+                teorias de que os mutantes terão uma participação muito maior
+                do que apenas uma aparição especial.
+            </p>
+
+            <p>
+                Professor X, Fera, Ciclope e Magneto poderiam formar uma das
+                principais forças contra Doutor Destino durante o conflito
+                envolvendo o multiverso.
+            </p>
+
+            <h3>Por que os X-Men seriam importantes?</h3>
+
+            <p>
+                Os mutantes possuem uma longa história dentro da Marvel e
+                alguns de seus personagens possuem poderes extremamente úteis
+                em uma guerra multiversal.
+            </p>
+
+            <p>
+                Professor X, por exemplo, poderia ser fundamental para coordenar
+                diferentes grupos de heróis através de sua telepatia.
+                Magneto também poderia ter um papel decisivo em batalhas de
+                grande escala.
+            </p>
+
+            <h3>O início de uma nova era</h3>
+
+            <p>
+                A participação dos X-Men poderia funcionar como uma ponte para
+                a introdução definitiva dos mutantes no MCU, fazendo de
+                Doomsday um dos filmes mais importantes para o futuro da Marvel.
+            </p>
+        `
+    },
+
+    {
+        categoria: "multiverso",
+        img: "img/loki-herois.png",
+        titulo: "Loki reunirá os heróis do multiverso",
+        excerto: "Após os eventos de sua série, Loki se tornou o guardião das linhas do tempo. A teoria diz que ele será responsável por encontrar e reunir heróis de diferentes universos para enfrentar a ameaça de Doutor Destino.",
+        autor: "@mutante_prime",
+        data: "30 JUL 2026",
+        credibilidade: "baixa",
+        comentarios: 47,
+        id: "loki-reunira-herois",
+
+        teoria: `
+            <p>
+                Depois dos acontecimentos de sua série, Loki passou a ocupar
+                uma posição única dentro do multiverso.
+            </p>
+
+            <p>
+                Por isso, uma teoria sugere que ele poderá ser responsável por
+                <strong>reunir diferentes heróis de diferentes realidades</strong>
+                para enfrentar Doutor Destino.
+            </p>
+
+            <h3>O guardião das linhas do tempo</h3>
+
+            <p>
+                Loki possui conhecimento sobre as diferentes ramificações
+                temporais e poderia perceber que uma ameaça maior está surgindo
+                antes dos próprios heróis.
+            </p>
+
+            <p>
+                Ele poderia então procurar versões alternativas de personagens
+                conhecidos e formar uma espécie de equipe multiversal.
+            </p>
+
+            <h3>Uma reunião impossível</h3>
+
+            <p>
+                Isso permitiria colocar personagens de diferentes universos
+                lado a lado e criar encontros que seriam impossíveis dentro
+                de uma única realidade.
+            </p>
+        `
+    },
+
+    {
+        categoria: "finale",
+        img: "img/mundo-batalha.png",
+        titulo: "Avengers: Doomsday terminará com a criação de Battleworld",
+        excerto: "Uma das teorias mais fortes é que o filme terminará com Destino fundindo fragmentos de várias realidades em um único planeta chamado Battleworld, preparando diretamente os acontecimentos de Avengers: Secret Wars.",
+        autor: "@secretwarsbr",
+        data: "15 AGO 2026",
+        credibilidade: "alta",
+        comentarios: 176,
+        id: "ponte-guerras-secretas",
+
+        teoria: `
+            <p>
+                Uma das teorias mais fortes para o final de
+                <strong>Avengers: Doomsday</strong> envolve a criação de
+                <strong>Battleworld</strong>.
+            </p>
+
+            <p>
+                Nos quadrinhos, Battleworld é uma realidade formada a partir
+                de diferentes partes do multiverso. A teoria sugere que algo
+                semelhante poderia acontecer no MCU.
+            </p>
+
+            <h3>O multiverso entra em colapso</h3>
+
+            <p>
+                Com diferentes universos sendo destruídos pelas Incursões,
+                Destino poderia tentar preservar aquilo que restou.
+            </p>
+
+            <p>
+                Em vez de permitir que todas as realidades desapareçam,
+                ele reuniria fragmentos delas em uma única realidade.
+            </p>
+
+            <h3>O nascimento de Battleworld</h3>
+
+            <p>
+                Esse novo mundo poderia ser controlado por Doutor Destino,
+                que passaria a governar os sobreviventes das diferentes
+                realidades.
+            </p>
+
+            <p>
+                O filme poderia terminar justamente nesse momento,
+                deixando os heróis presos nessa nova realidade e preparando
+                diretamente os acontecimentos de
+                <strong>Avengers: Secret Wars</strong>.
+            </p>
+        `
+    },
+
+    {
+        categoria: "vingadores",
+        img: "img/doom-sentinela.png",
+        titulo: "O Sentinela pode se tornar um perigo maior que Destino",
+        excerto: "O Sentinela possui um dos maiores níveis de poder da Marvel. Alguns fãs acreditam que sua personalidade sombria, o Vácuo, escapará do controle e se tornará uma ameaça tão grande quanto o próprio Doutor Destino.",
+        autor: "@detetivemarvel",
+        data: "01 AGO 2026",
+        credibilidade: "baixa",
+        comentarios: 39,
+        id: "sentinela-perigo",
+
+        teoria: `
+            <p>
+                O Sentinela é conhecido por possuir um nível de poder
+                extraordinário, mas seu maior problema pode não ser sua força:
+                pode ser o <strong>Vácuo</strong>.
+            </p>
+
+            <p>
+                A teoria sugere que a personalidade sombria do personagem
+                poderá escapar do controle e transformar o herói em uma ameaça
+                para todos os envolvidos na guerra contra Destino.
+            </p>
+
+            <h3>O poder do Sentinela</h3>
+
+            <p>
+                Se o Sentinela perder o controle, os próprios heróis poderiam
+                perceber que não possuem capacidade para enfrentá-lo diretamente.
+            </p>
+
+            <h3>Um inimigo inesperado</h3>
+
+            <p>
+                Isso criaria uma situação interessante: enquanto todos estão
+                concentrados em Doutor Destino, o verdadeiro perigo poderia
+                surgir de dentro da própria equipe.
+            </p>
+
+            <p>
+                O Vácuo poderia se tornar uma ameaça tão grande que até
+                Destino precisaria lidar com ele.
+            </p>
+        `
+    },
+
+    {
+        categoria: "multiverso",
+        img: "img/destino-4.png",
+        titulo: "Franklin Richards será a peça mais importante da história",
+        excerto: "Nos quadrinhos de Secret Wars, Franklin Richards possui poderes de manipulação da realidade. Muitos fãs acreditam que Doutor Destino tentará usar ou controlar Franklin para reconstruir o multiverso e criar Battleworld.",
+        autor: "@leakhunter",
+        data: "05 AGO 2026",
+        credibilidade: "baixa",
+        comentarios: 88,
+        id: "franklin-richards",
+
+        teoria: `
+            <p>
+                Franklin Richards é um dos personagens mais poderosos
+                associados ao Quarteto Fantástico nos quadrinhos.
+            </p>
+
+            <p>
+                Por possuir habilidades relacionadas à manipulação da realidade,
+                muitos fãs acreditam que ele poderia ser extremamente importante
+                para os acontecimentos de <strong>Avengers: Doomsday</strong>.
+            </p>
+
+            <h3>Por que Destino precisaria de Franklin?</h3>
+
+            <p>
+                Se o multiverso estiver realmente entrando em colapso,
+                reconstruir a realidade exigiria uma quantidade absurda de poder.
+            </p>
+
+            <p>
+                Destino poderia tentar controlar Franklin para utilizar seus
+                poderes e reconstruir aquilo que foi destruído.
+            </p>
+
+            <h3>O conflito com Reed Richards</h3>
+
+            <p>
+                Essa situação colocaria Reed Richards diretamente contra seu
+                maior rival, já que proteger Franklin seria uma prioridade
+                absoluta para o Senhor Fantástico.
+            </p>
+        `
+    },
+
+    {
+        categoria: "destino",
+        img: "img/domm-naovilao.png",
+        titulo: "Doutor Destino não será o verdadeiro vilão no início",
+        excerto: "Uma teoria que cresceu após os trailers sugere que Doom aparecerá inicialmente como alguém tentando salvar o multiverso das Incursões. Os heróis podem até acreditar que ele é um aliado antes de descobrirem que seu plano envolve governar todas as realidades.",
+        autor: "@teoriaverse",
+        data: "10 AGO 2026",
+        credibilidade: "media",
+        comentarios: 121,
+        id: "destino-falso-aliado",
+
+        teoria: `
+            <p>
+                Uma possibilidade interessante é que Doutor Destino não seja
+                apresentado imediatamente como o grande vilão da história.
+            </p>
+
+            <p>
+                Inicialmente, Victor poderia aparecer como alguém que
+                <strong>entende o perigo do colapso multiversal</strong>
+                e acredita possuir uma solução.
+            </p>
+
+            <h3>Destino como possível aliado</h3>
+
+            <p>
+                Os heróis poderiam ser obrigados a trabalhar com ele porque
+                suas informações sobre o multiverso são fundamentais para
+                impedir uma catástrofe.
+            </p>
+
+            <p>
+                Reed Richards seria provavelmente um dos personagens mais
+                desconfiados dessa aliança.
+            </p>
+
+            <h3>A verdadeira intenção</h3>
+
+            <p>
+                Porém, depois de conquistar a confiança dos heróis, Destino
+                poderia revelar que sua verdadeira intenção nunca foi salvar
+                todas as realidades.
+            </p>
+
+            <p>
+                Seu objetivo poderia ser criar uma realidade perfeita,
+                completamente controlada por ele.
+            </p>
+
+            <p>
+                Assim, os heróis perceberiam tarde demais que estavam
+                ajudando o próprio vilão a executar seu plano.
+            </p>
+        `
+    },
+
+    {
+        categoria: "destino",
+        img: "img/destino-aliado.png",
+        titulo: "Reed Richards fará uma aliança temporária com Doutor Destino",
+        excerto: "Uma das teorias mais comentadas entre os fãs é que Reed Richards, o Senhor Fantástico, será forçado a formar uma aliança temporária com Doutor Destino em Avengers: Doomsday.",
+        autor: "@teoriaverse",
+        data: "06 AGO 2026",
+        credibilidade: "media",
+        comentarios: 153,
+        id: "reed-destino",
+
+        teoria: `
+            <p>
+                Uma das teorias mais comentadas entre os fãs é que
+                <strong>Reed Richards será forçado a formar uma aliança
+                temporária com Doutor Destino</strong>.
+            </p>
+
+            <p>
+                A ideia parte do fato de que os dois são considerados alguns
+                dos maiores gênios do Universo Marvel. Diante de uma ameaça
+                capaz de destruir realidades inteiras ou provocar o colapso
+                do multiverso, Reed poderia perceber que os heróis sozinhos
+                não seriam suficientes.
+            </p>
+
+            <h3>Uma aliança impossível</h3>
+
+            <p>
+                Nesse cenário, Reed seria obrigado a trabalhar ao lado de seu
+                maior rival. A parceria, porém, seria marcada por uma enorme
+                desconfiança.
+            </p>
+
+            <p>
+                Enquanto Reed buscaria salvar o maior número possível de
+                universos, Destino provavelmente teria seus próprios objetivos
+                secretos.
+            </p>
+
+            <h3>Reed pode confiar em Destino?</h3>
+
+            <p>
+                Esse seria o grande conflito. Reed sabe exatamente do que
+                Victor Von Doom é capaz e provavelmente entenderia que qualquer
+                acordo com ele poderia ter consequências.
+            </p>
+
+            <p>
+                Mesmo assim, diante de uma ameaça maior, Reed poderia concluir
+                que trabalhar temporariamente com Destino é a única maneira
+                de salvar milhões de vidas.
+            </p>
+
+            <h3>O verdadeiro plano de Destino</h3>
+
+            <p>
+                O problema é que Destino poderia estar usando essa aliança
+                para conseguir exatamente aquilo que precisa.
+            </p>
+
+            <p>
+                Depois de derrotarem a ameaça principal, Victor poderia
+                finalmente revelar suas verdadeiras intenções e tentar assumir
+                o controle das realidades restantes.
+            </p>
+
+            <h3>Como isso poderia terminar?</h3>
+
+            <p>
+                A aliança poderia ajudar os heróis a resolver um problema
+                imediato, mas ao mesmo tempo permitir que Destino se tornasse
+                ainda mais poderoso.
+            </p>
+
+            <p>
+                Isso criaria uma ótima transição para
+                <strong>Avengers: Secret Wars</strong>, com Reed percebendo
+                que a pessoa que ele ajudou a salvar o multiverso pode acabar
+                sendo a maior ameaça de todas.
+            </p>
+        `
+    },{
+    categoria: "destino",
+    img: "img/destino-manipulando.png",
+    titulo: "Doutor Destino pode estar manipulando múltiplas variantes ao mesmo tempo",
+    excerto: "Analisando as pistas do trailer, fãs acreditam que Destino não é apenas um vilão isolado, mas sim uma peça de um plano muito maior envolvendo o multiverso inteiro.",
+    autor: "@teoriaverse",
+    data: "17 AGO 2026",
+    credibilidade: "alta",
+    comentarios: 142,
+    id: "destino-multiverso",
+
+    teoria: `
+        <p>
+            Uma teoria bastante comentada pelos fãs sugere que
+            <strong>Doutor Destino pode estar manipulando diferentes
+            variantes de personagens ao mesmo tempo</strong>.
+        </p>
+
+        <p>
+            Em vez de agir sozinho, Victor Von Doom poderia estar
+            utilizando o conhecimento sobre o multiverso para influenciar
+            diferentes versões de heróis e vilões em realidades distintas.
+        </p>
+
+        <h3>Um plano muito maior</h3>
+
+        <p>
+            A ideia é que Destino não esteja interessado apenas em conquistar
+            uma única realidade. Seu verdadeiro objetivo poderia envolver
+            controlar acontecimentos em vários universos simultaneamente.
+        </p>
+
+        <p>
+            Dessa forma, algumas variantes poderiam estar trabalhando para
+            Doom sem sequer perceber que estão sendo utilizadas dentro de
+            um plano muito maior.
+        </p>
+
+        <h3>Por que manipular variantes?</h3>
+
+        <p>
+            Cada realidade possui versões diferentes dos mesmos personagens.
+            Destino poderia explorar essas diferenças para encontrar
+            aliados, informações e recursos que não existem em seu próprio
+            universo.
+        </p>
+
+        <p>
+            Isso também explicaria por que tantos personagens de diferentes
+            realidades poderiam acabar envolvidos no conflito.
+        </p>
+
+        <h3>O verdadeiro objetivo</h3>
+
+        <p>
+            Se essa teoria estiver correta, os acontecimentos de
+            <strong>Avengers: Doomsday</strong> poderiam revelar que grande
+            parte do conflito foi planejada por Destino muito antes de os
+            heróis perceberem o que estava acontecendo.
+        </p>
+
+        <p>
+            O maior perigo não seria apenas o poder de Victor Von Doom,
+            mas sua capacidade de manipular os acontecimentos do multiverso
+            para colocar cada peça exatamente onde ele precisa.
+        </p>
+    `
+},
+
+];
+    // 👉 é só colar mais objetos aqui — filtro e paginação se ajustam sozinhos
+
+const TEORIAS_POR_PAGINA = 6;
+let paginaAtual = 1;
+let filtroAtivo = "todas";
+
+const rotuloCredibilidade = {
+    alta: "ALTA CREDIBILIDADE",
+    media: "CREDIBILIDADE MÉDIA",
+    baixa: "BAIXA CREDIBILIDADE"
+};
+
+function getTeoriasFiltradas() {
+    if (filtroAtivo === "todas") return teorias;
+    return teorias.filter(t => t.categoria === filtroAtivo);
+}
+
+function renderizarTeorias() {
+    const grid = document.getElementById("theoryGrid");
+    const lista = getTeoriasFiltradas();
+    const totalPaginas = Math.ceil(lista.length / TEORIAS_POR_PAGINA) || 1;
+
+    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
+    if (paginaAtual < 1) paginaAtual = 1;
+
+    const inicio = (paginaAtual - 1) * TEORIAS_POR_PAGINA;
+    const fim = inicio + TEORIAS_POR_PAGINA;
+    const teoriasDaPagina = lista.slice(inicio, fim);
+
+    if (teoriasDaPagina.length === 0) {
+        grid.innerHTML = `<p style="color:var(--gray);">Nenhuma teoria encontrada nessa categoria.</p>`;
+    } else {
+        grid.innerHTML = teoriasDaPagina.map(t => `
+            <article class="theory-card">
+                <div class="theory-card-img">
+                    <img src="${t.img}" alt="Teoria">
+                    <span class="credibility-tag credibility-${t.credibilidade}">${rotuloCredibilidade[t.credibilidade]}</span>
+                </div>
+                <div class="theory-content">
+                    <h3>${t.titulo}</h3>
+                    <p class="theory-excerpt">${t.excerto}</p>
+                    <div class="theory-footer">
+                        <span class="theory-author">${t.autor}</span>
+                        <span class="theory-comments">💬 ${t.comentarios}</span>
+                    </div>
+                    <div class="theory-bottom">
+                        <span class="news-date">${t.data}</span>
+
+                        <a href="#" class="abrir-modal" data-id="${t.id}">
+                            Ler teoria →
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `).join("");
+    }
+
+    renderizarPaginacao(totalPaginas);
+}
+
+function renderizarPaginacao(totalPaginas) {
+    const pag = document.getElementById("pagination");
+
+    if (totalPaginas <= 1) {
+        pag.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    html += `<a href="#" class="page-btn prev" data-action="prev" ${paginaAtual === 1 ? 'style="pointer-events:none;opacity:0.4;"' : ''}>← Anterior</a>`;
+
+    for (let i = 1; i <= totalPaginas; i++) {
+        html += `<a href="#" class="page-num ${i === paginaAtual ? 'active' : ''}" data-page="${i}">${i}</a>`;
+    }
+
+    html += `<a href="#" class="page-btn next" data-action="next" ${paginaAtual === totalPaginas ? 'style="pointer-events:none;opacity:0.4;"' : ''}>Próxima →</a>`;
+
+    pag.innerHTML = html;
+}
+
+// clique na paginação
+document.getElementById("pagination").addEventListener("click", (e) => {
+    e.preventDefault();
+    const alvo = e.target;
+
+    if (alvo.dataset.action === "prev") {
+        paginaAtual--;
+    } else if (alvo.dataset.action === "next") {
+        paginaAtual++;
+    } else if (alvo.dataset.page) {
+        paginaAtual = parseInt(alvo.dataset.page);
+    } else {
+        return;
+    }
+
+    renderizarTeorias();
+    document.querySelector(".news-filters").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// clique nos filtros
+document.getElementById("teoriasFilters").addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-chip");
+    if (!btn) return;
+
+    document.querySelectorAll("#teoriasFilters .filter-chip").forEach(chip => chip.classList.remove("active"));
+    btn.classList.add("active");
+
+    filtroAtivo = btn.dataset.categoria;
+    paginaAtual = 1; // sempre volta pra primeira página ao trocar de filtro
+
+    renderizarTeorias();
+});
+
+// inicializa
+
+
+renderizarTeorias();
+
+
+const modalTeoria = document.getElementById("modalTeoria");
+
+const modalImagem = document.getElementById("modalImagem");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalAutor = document.getElementById("modalAutor");
+const modalData = document.getElementById("modalData");
+const modalComentarios = document.getElementById("modalComentarios");
+const modalTexto = document.getElementById("modalTexto");
+const modalCredibilidade = document.getElementById("modalCredibilidade");
+
+
+document.addEventListener("click", function(e) {
+
+    const botao = e.target.closest(".abrir-modal");
+
+    if (!botao) return;
+
+    e.preventDefault();
+
+    const id = botao.dataset.id;
+
+    const teoria = teorias.find(t => t.id === id);
+
+    if (!teoria) return;
+
+
+    modalImagem.src = teoria.img;
+    modalImagem.alt = teoria.titulo;
+
+    modalTitulo.textContent = teoria.titulo;
+
+    modalAutor.textContent = teoria.autor;
+
+    modalData.textContent = teoria.data;
+
+    modalComentarios.textContent =
+        `${teoria.comentarios} comentários`;
+
+    modalCredibilidade.textContent =
+        rotuloCredibilidade[teoria.credibilidade];
+
+    modalTexto.innerHTML = teoria.teoria;
+
+
+    modalTeoria.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+});
+
+
+function fecharModal() {
+
+    modalTeoria.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+document
+    .getElementById("fecharModal")
+    .addEventListener("click", fecharModal);
+
+
+document
+    .querySelector(".modal-overlay")
+    .addEventListener("click", fecharModal);
+
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+        fecharModal();
+    }
+
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,552 @@
+/* ==========================================================
+   TEORIAS.CSS
+   Estilos específicos da página de Teorias.
+   Reutiliza as variáveis e classes globais definidas em style.css
+   (navbar, section, dark-section, news-filters, pagination, footer).
+   ========================================================== */
+
+.teorias-hero span {
+    color: var(--gold, #d4af37);
+}
+
+/* ---------- Teoria em destaque ---------- */
+
+.featured-theory {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background: var(--navy-light, #131a2b);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.featured-theory:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.featured-theory-img {
+    position: relative;
+    height: 100%;
+    min-height: 320px;
+}
+
+.featured-theory-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-theory-content {
+    padding: 32px 40px 32px 0;
+}
+
+.featured-theory-content > span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold, #d4af37);
+    margin-bottom: 12px;
+}
+
+.featured-theory-content h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.featured-theory-content p {
+    color: var(--gray, #9aa1ad);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.featured-theory-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray, #9aa1ad);
+}
+
+/* ---------- Selo de credibilidade ---------- */
+
+.credibility-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+}
+
+.credibility-alta {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.credibility-media {
+    background: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.4);
+}
+
+.credibility-baixa {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+/* ---------- Grade de teorias ---------- */
+
+.theory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.theory-card {
+    background: var(--navy-light, #131a2b);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theory-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.theory-card-img {
+    position: relative;
+    height: 180px;
+}
+
+.theory-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.theory-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.theory-content h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.theory-excerpt {
+    color: var(--gray, #9aa1ad);
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    flex: 1;
+}
+
+.theory-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--gold, #d4af37);
+    margin-bottom: 14px;
+}
+
+.theory-comments {
+    color: var(--gray, #9aa1ad);
+}
+
+.theory-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13px;
+}
+
+.theory-bottom a {
+    color: var(--gold, #d4af37);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.theory-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Banner de envio de teoria ---------- */
+
+.theory-submit-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, var(--navy-light, #131a2b), var(--navy, #0b0f1a));
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.theory-submit-banner span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold, #d4af37);
+}
+
+.theory-submit-banner h2 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.theory-submit-banner p {
+    color: var(--gray, #9aa1ad);
+    max-width: 480px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 900px) {
+    .featured-theory {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-theory-content {
+        padding: 24px;
+    }
+
+    .theory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .theory-submit-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .theory-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   MODAL DE TEORIAS
+========================= */
+
+.modal-teoria {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+
+/* MODAL ABERTO */
+
+.modal-teoria.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FUNDO CLICÁVEL */
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+
+/* JANELA */
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #0b0b0b;
+
+    border: 1px solid rgba(0, 255, 100, 0.25);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 40px rgba(0, 255, 100, 0.12),
+        0 20px 80px rgba(0, 0, 0, 0.8);
+
+    transform: translateY(30px) scale(0.97);
+
+    transition: transform 0.3s ease;
+
+    z-index: 2;
+}
+
+
+.modal-teoria.active .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* IMAGEM */
+
+.modal-imagem {
+    width: 100%;
+
+    height: 380px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 18px 18px 0 0;
+}
+
+
+/* ÁREA DO TEXTO */
+
+.modal-info {
+    padding: 35px 45px 45px;
+}
+
+
+/* CATEGORIA */
+
+.modal-categoria {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #00ff66;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* CREDIBILIDADE */
+
+.modal-credibilidade {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 255, 100, 0.12);
+
+    color: #00ff66;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* TÍTULO */
+
+.modal-info h2 {
+    margin: 15px 0;
+
+    color: #ffffff;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.05;
+}
+
+
+/* INFORMAÇÕES */
+
+.modal-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* TEXTO DA TEORIA */
+
+.modal-texto {
+    color: #d1d1d1;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.modal-texto p {
+    margin-bottom: 22px;
+}
+
+
+.modal-texto h3 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+
+    color: #00ff66;
+
+    font-size: 22px;
+}
+
+
+.modal-texto strong {
+    color: #ffffff;
+}
+
+
+/* BOTÃO FECHAR */
+
+.modal-fechar {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.2s ease;
+}
+
+
+.modal-fechar:hover {
+    background: #00ff66;
+
+    color: #000000;
+
+    transform: rotate(90deg);
+}
+
+
+/* BARRA DE ROLAGEM */
+
+.modal-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.modal-box::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: #00ff66;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .modal-teoria {
+        padding: 10px;
+    }
+
+
+    .modal-imagem {
+        height: 230px;
+    }
+
+
+    .modal-info {
+        padding: 25px 22px 35px;
+    }
+
+
+    .modal-info h2 {
+        font-size: 32px;
+    }
+
+
+    .modal-texto {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+}
