@@ -1,0 +1,582 @@
+/* ============================================
+   PRODUTOS.CSS
+   Página "Produtos" — loja do fã com filtro
+   por categoria.
+   Paleta oficial: preto + verde
+============================================ */
+
+
+/* =========================
+   VARIÁVEIS DA PÁGINA
+========================= */
+
+:root {
+
+    --pr-bg: #050608;
+    --pr-panel: #10131a;
+    --pr-panel-alt: #161a22;
+
+    --pr-green: #00A86B;
+    --pr-green-light: #00c97e;
+
+    --pr-text: #ffffff;
+    --pr-muted: #a7adb8;
+
+    --pr-line: rgba(255,255,255,0.10);
+
+}
+
+
+/* =========================
+   BOX SIZING
+========================= */
+
+.pr-hero *,
+.pr-filters-section *,
+.pr-section *,
+.pr-note-section * {
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.pr-hero {
+
+    position: relative;
+
+    padding: 190px 24px 70px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% -10%,
+            rgba(0,168,107,0.18),
+            transparent 60%
+        ),
+
+        linear-gradient(
+            180deg,
+            #050608 0%,
+            var(--pr-bg) 100%
+        );
+
+}
+
+
+.pr-hero-content {
+
+    max-width: 640px;
+
+    margin: 0 auto;
+
+}
+
+
+.pr-eyebrow {
+
+    display: inline-block;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--pr-green-light);
+
+    margin-bottom: 18px;
+
+}
+
+
+.pr-hero h1 {
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(42px, 7vw, 76px);
+
+    letter-spacing: 2px;
+
+    color: var(--pr-text);
+
+    line-height: 1;
+
+    margin: 0 0 18px;
+
+}
+
+
+.pr-hero h1 span {
+
+    color: var(--pr-green-light);
+
+}
+
+
+.pr-hero p {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--pr-muted);
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.pr-filters-section {
+
+    background: var(--pr-bg);
+
+    padding: 0 24px 36px;
+
+}
+
+
+.pr-filters-section .container {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+
+.pr-filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.pr-filter-btn {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    color: var(--pr-muted);
+
+    background: var(--pr-panel-alt);
+
+    border: 1px solid var(--pr-line);
+
+    border-radius: 999px;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.pr-filter-btn:hover {
+
+    color: var(--pr-white);
+
+    border-color: rgba(0,168,107,0.5);
+
+    background: rgba(0,168,107,0.08);
+
+    transform: translateY(-1px);
+
+}
+
+
+.pr-filter-btn.is-active {
+
+    color: #ffffff;
+
+    background: var(--pr-green);
+
+    border-color: var(--pr-green);
+
+    box-shadow:
+        0 0 18px rgba(0,168,107,0.20);
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.pr-section {
+
+    background: var(--pr-bg);
+
+    padding: 0 24px 30px;
+
+}
+
+
+.pr-section .container {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+
+.pr-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(240px, 1fr));
+
+    gap: 26px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.pr-card {
+
+    background: var(--pr-panel-alt);
+
+    border:
+        1px solid var(--pr-line);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        opacity 0.2s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.pr-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(0,168,107,0.5);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.45),
+        0 0 20px rgba(0,168,107,0.06);
+
+}
+
+
+.pr-card.is-hidden {
+
+    display: none;
+
+}
+
+
+/* =========================
+   IMAGEM DO PRODUTO
+========================= */
+
+.pr-card-img {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    background: #090b10;
+
+    overflow: hidden;
+
+}
+
+
+.pr-card-img img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.pr-card:hover .pr-card-img img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================
+   INFORMAÇÕES DO PRODUTO
+========================= */
+
+.pr-card-info {
+
+    padding: 18px 18px 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.pr-tag {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 10.5px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--pr-green-light);
+
+}
+
+
+.pr-card-info h3 {
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 21px;
+
+    letter-spacing: 0.4px;
+
+    color: var(--pr-text);
+
+    margin: 8px 0 10px;
+
+    line-height: 1.15;
+
+}
+
+
+.pr-price {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: var(--pr-text);
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =========================
+   BOTÃO COMPRAR
+========================= */
+
+.pr-buy-button {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12.5px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--pr-green-light);
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid rgba(0,168,107,0.4);
+
+    padding-bottom: 2px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.pr-buy-button:hover {
+
+    color: #ffffff;
+
+    border-color: var(--pr-green-light);
+
+}
+
+
+/* =========================
+   NENHUM PRODUTO
+========================= */
+
+.pr-empty {
+
+    display: none;
+
+    text-align: center;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    color: var(--pr-muted);
+
+    padding: 60px 20px;
+
+}
+
+
+.pr-empty.is-visible {
+
+    display: block;
+
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.pr-note-section {
+
+    background: var(--pr-bg);
+
+    padding: 10px 24px 80px;
+
+}
+
+
+.pr-note-section .container {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+
+.pr-note {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12.5px;
+
+    line-height: 1.6;
+
+    color: var(--pr-muted);
+
+    border-top:
+        1px solid var(--pr-line);
+
+    padding-top: 22px;
+
+    max-width: 640px;
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 640px) {
+
+    .pr-hero {
+
+        padding: 150px 20px 50px;
+
+    }
+
+
+    .pr-filters-section {
+
+        padding:
+            0 20px 28px;
+
+    }
+
+
+    .pr-section {
+
+        padding:
+            0 20px 20px;
+
+    }
+
+
+    .pr-grid {
+
+        grid-template-columns:
+            repeat(auto-fill, minmax(150px, 1fr));
+
+        gap: 16px;
+
+    }
+
+
+    .pr-card-info {
+
+        padding: 14px;
+
+    }
+
+
+    .pr-card-info h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .pr-price {
+
+        font-size: 16px;
+
+    }
+
+}
