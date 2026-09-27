@@ -29,7 +29,7 @@ const CHARACTERS = [
     ator: "Robert Downey Jr.",
     faccao: "vilao",
     grupos: [],
-    imagem: "img/doutor-destino-personagem.png",
+    imagem: "../static/img/doutor-destino-personagem.png",
     principal: true,
 
     destaque: {
@@ -57,7 +57,7 @@ const CHARACTERS = [
     ator: "Brie Larson",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/capita-marvel-personagem.png",
+    imagem: "../static/img/capita-marvel-personagem.png",
 
     resumo: "Carol Danvers é uma das heroínas mais poderosas do universo Marvel. Graças à energia cósmica que corre em seu corpo, ela possui força extraordinária, voo e a capacidade de liberar poderosos ataques energéticos.",
 
@@ -78,7 +78,7 @@ const CHARACTERS = [
     ator: "Pedro Pascal",
     faccao: "heroi",
     grupos: ["quarteto-fantastico"],
-    imagem: "img/senhor-fantastico.png",
+    imagem: "../static/img/senhor-fantastico.png",
 
     resumo: "Reed Richards é considerado uma das mentes mais brilhantes do universo Marvel. Líder do Quarteto Fantástico, utiliza sua inteligência extraordinária para proteger o mundo de ameaças científicas e cósmicas.",
 
@@ -100,7 +100,7 @@ const CHARACTERS = [
     ator: "Vanessa Kirby",
     faccao: "heroi",
     grupos: ["quarteto-fantastico"],
-    imagem: "img/mulher-invisivel.png",
+    imagem: "../static/img/mulher-invisivel.png",
 
     resumo: "Sue Storm é uma das integrantes mais poderosas do Quarteto Fantástico. Além de ficar invisível, ela pode criar campos de força praticamente indestrutíveis.",
 
@@ -122,7 +122,7 @@ const CHARACTERS = [
     ator: "Patrick Stewart",
     faccao: "heroi",
     grupos: ["x-men"],
-    imagem: "img/professor-x.png",
+    imagem: "../static/img/professor-x.png",
 
     resumo: "Charles Xavier é o fundador dos X-Men e um dos telepatas mais poderosos do planeta. Sua missão é promover a convivência pacífica entre humanos e mutantes.",
 
@@ -144,7 +144,7 @@ const CHARACTERS = [
     ator: "Kelsey Grammer",
     faccao: "heroi",
     grupos: ["x-men"],
-    imagem: "img/fera.png",
+    imagem: "../static/img/fera.png",
 
     resumo: "Hank McCoy combina inteligência genial com força e agilidade sobre-humanas. É um dos cientistas mais brilhantes dos X-Men.",
 
@@ -166,7 +166,7 @@ const CHARACTERS = [
     ator: "Lewis Pullman",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/sentinela.png",
+    imagem: "../static/img/sentinela.png",
 
     resumo: "Robert Reynolds possui um dos maiores níveis de poder já vistos no universo Marvel. Sua força rivaliza com a de entidades cósmicas.",
 
@@ -187,7 +187,7 @@ const CHARACTERS = [
     ator: "Chris Hemsworth",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/thor.png",
+    imagem: "../static/img/thor.png",
 
     resumo: "O Deus do Trovão é um dos membros mais poderosos dos Vingadores.",
 
@@ -209,7 +209,7 @@ const CHARACTERS = [
     ator: "Tom Hiddleston",
     faccao: "antiheroi",
     grupos: ["multiverso"],
-    imagem: "img/loki.png",
+    imagem: "../static/img/loki.png",
 
     resumo: "O Deus da Trapaça é um mestre da manipulação, magia e estratégia. Irmão adotivo de Thor, tornou-se uma peça fundamental para o destino do multiverso.",
 
@@ -231,7 +231,7 @@ const CHARACTERS = [
     ator: "Anthony Mackie",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/capitao-america.png",
+    imagem: "../static/img/capitao-america.png",
 
     resumo: "Sam Wilson assumiu o legado de Steve Rogers e tornou-se o novo Capitão América do MCU.",
 
@@ -253,7 +253,7 @@ const CHARACTERS = [
     ator: "Florence Pugh",
     faccao: "heroi",
     grupos: ["thunderbolts"],
-    imagem: "img/yelena.png",
+    imagem: "../static/img/yelena.png",
 
     resumo: "Espiã altamente treinada e sucessora de Natasha Romanoff.",
 
@@ -275,7 +275,7 @@ const CHARACTERS = [
     ator: "Sebastian Stan",
     faccao: "heroi",
     grupos: ["thunderbolts"],
-    imagem: "img/bucky.png",
+    imagem: "../static/img/bucky.png",
 
     resumo: "Melhor amigo de Steve Rogers e um dos combatentes mais experientes da Marvel.",
 
@@ -297,7 +297,7 @@ const CHARACTERS = [
     ator: "David Harbour",
     faccao: "heroi",
     grupos: ["thunderbolts"],
-    imagem: "img/red-guardian.png",
+    imagem: "../static/img/red-guardian.png",
 
     resumo: "A resposta soviética ao Capitão América, conhecido por sua força e carisma.",
 
@@ -319,7 +319,7 @@ const CHARACTERS = [
     ator: "Simu Liu",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/shang-chi.png",
+    imagem: "../static/img/shang-chi.png",
 
     resumo: "Considerado um dos maiores artistas marciais do universo Marvel.",
 
@@ -341,7 +341,7 @@ const CHARACTERS = [
     ator: "Tenoch Huerta",
     faccao: "antiheroi",
     grupos: ["talokan"],
-    imagem: "img/namor.png",
+    imagem: "../static/img/namor.png",
 
     resumo: "Rei de Talokan e um dos seres mais poderosos da Terra.",
 
@@ -362,7 +362,7 @@ const CHARACTERS = [
     ator: "Benedict Wong",
     faccao: "heroi",
     grupos: ["magos"],
-    imagem: "img/wong.png",
+    imagem: "../static/img/wong.png",
 
     resumo: "Wong é o atual Mago Supremo da Terra e um dos maiores especialistas em artes místicas da Marvel.",
 
@@ -384,7 +384,7 @@ const CHARACTERS = [
     ator: "Chris Pratt",
     faccao: "heroi",
     grupos: ["guardioes"],
-    imagem: "img/star-lord.png",
+    imagem: "../static/img/star-lord.png",
 
     resumo: "Peter Quill é o líder dos Guardiões da Galáxia, conhecido por sua coragem, humor e habilidade de liderança.",
 
@@ -406,7 +406,7 @@ const CHARACTERS = [
     ator: "Bradley Cooper",
     faccao: "heroi",
     grupos: ["guardioes"],
-    imagem: "img/rocket.png",
+    imagem: "../static/img/rocket.png",
 
     resumo: "Rocket é um gênio da engenharia, especialista em armas e um dos membros mais inteligentes dos Guardiões da Galáxia.",
 
@@ -428,7 +428,7 @@ const CHARACTERS = [
     ator: "Zoe Saldaña",
     faccao: "heroi",
     grupos: ["guardioes"],
-    imagem: "img/gamora.png",
+    imagem: "../static/img/gamora.png",
 
     resumo: "Gamora é considerada uma das guerreiras mais perigosas do universo Marvel.",
 
@@ -450,7 +450,7 @@ const CHARACTERS = [
     ator: "Paul Rudd",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/homem-formiga.png",
+    imagem: "../static/img/homem-formiga.png",
 
     resumo: "Scott Lang utiliza partículas Pym para alterar seu tamanho e acessar o Reino Quântico.",
 
@@ -472,7 +472,7 @@ const CHARACTERS = [
     ator: "Evangeline Lilly",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/vespa.png",
+    imagem: "../static/img/vespa.png",
 
     resumo: "Hope Van Dyne combina tecnologia avançada, velocidade e habilidade de combate.",
 
@@ -494,7 +494,7 @@ const CHARACTERS = [
     ator: "Letitia Wright",
     faccao: "heroi",
     grupos: ["wakanda"],
-    imagem: "img/pantera-negra.png",
+    imagem: "../static/img/pantera-negra.png",
 
     resumo: "Shuri assumiu o legado do Pantera Negra e tornou-se a protetora de Wakanda.",
 
@@ -516,7 +516,7 @@ const CHARACTERS = [
     ator: "Winston Duke",
     faccao: "heroi",
     grupos: ["wakanda"],
-    imagem: "img/mbaku.png",
+    imagem: "../static/img/mbaku.png",
 
     resumo: "Líder da Tribo Jabari e um dos maiores guerreiros de Wakanda.",
 
@@ -538,7 +538,7 @@ const CHARACTERS = [
     ator: "Joseph Quinn",
     faccao: "heroi",
     grupos: ["quarteto-fantastico"],
-    imagem: "img/tocha-humana.png",
+    imagem: "../static/img/tocha-humana.png",
 
     resumo: "Johnny Storm controla o fogo e pode voar em velocidades impressionantes.",
 
@@ -560,7 +560,7 @@ const CHARACTERS = [
     ator: "Ebon Moss-Bachrach",
     faccao: "heroi",
     grupos: ["quarteto-fantastico"],
-    imagem: "img/coisa.png",
+    imagem: "../static/img/coisa.png",
 
     resumo: "Ben Grimm possui força colossal e uma pele rochosa praticamente indestrutível.",
 
@@ -582,7 +582,7 @@ const CHARACTERS = [
     ator: "James Marsden",
     faccao: "heroi",
     grupos: ["x-men"],
-    imagem: "img/ciclope.png",
+    imagem: "../static/img/ciclope.png",
 
     resumo: "Líder de campo dos X-Men e mestre em estratégia de combate.",
 
@@ -604,7 +604,7 @@ const CHARACTERS = [
     ator: "Ian McKellen",
     faccao: "antiheroi",
     grupos: ["x-men"],
-    imagem: "img/magneto.png",
+    imagem: "../static/img/magneto.png",
 
     resumo: "Mestre do magnetismo e um dos mutantes mais poderosos da Terra.",
 
@@ -626,7 +626,7 @@ const CHARACTERS = [
     ator: "Alan Cumming",
     faccao: "heroi",
     grupos: ["x-men"],
-    imagem: "img/noturno.png",
+    imagem: "../static/img/noturno.png",
 
     resumo: "Mutante capaz de se teleportar instantaneamente e especialista em infiltração.",
 
@@ -648,7 +648,7 @@ const CHARACTERS = [
     ator: "Rebecca Romijn",
     faccao: "antiheroi",
     grupos: ["x-men"],
-    imagem: "img/mistica.png",
+    imagem: "../static/img/mistica.png",
 
     resumo: "Mutante capaz de assumir a aparência de qualquer pessoa.",
 
@@ -670,7 +670,7 @@ const CHARACTERS = [
     ator: "Channing Tatum",
     faccao: "heroi",
     grupos: ["x-men"],
-    imagem: "img/gambit.png",
+    imagem: "../static/img/gambit.png",
 
     resumo: "Remy LeBeau pode carregar objetos com energia cinética explosiva.",
 
@@ -692,7 +692,7 @@ const CHARACTERS = [
     ator: "Danny Ramirez",
     faccao: "heroi",
     grupos: ["vingadores"],
-    imagem: "img/falcao.png",
+    imagem: "../static/img/falcao.png",
 
     resumo: "Joaquin Torres assumiu o manto do novo Falcão ao lado do Capitão América.",
 
@@ -714,7 +714,7 @@ const CHARACTERS = [
     ator: "A SER REVELADO",
     faccao: "vilao",
     grupos: [],
-    imagem: "img/char-8.jpg",
+    imagem: "../static/img/char-8.jpg",
 
     resumo: "Um personagem misterioso ainda não anunciado oficialmente pela Marvel Studios.",
 

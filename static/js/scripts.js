@@ -117,7 +117,7 @@ if (id === "novo-ator-confirmado") {
         "10 Ago 2026";
 
     document.getElementById("imagem").src =
-        "img/ciclop-confirmado.png";
+        "../static/img/ciclop-confirmado.png";
 
     document.getElementById("conteudo").innerHTML = `
         <p>
@@ -156,7 +156,7 @@ if(id === "steve-mjolnir"){
         "5 min de leitura";
 
     document.getElementById("imagem").src =
-        "img/bastidores.png";
+        "../static/img/bastidores.png";
 
     document.getElementById("conteudo").innerHTML = `
         <p>

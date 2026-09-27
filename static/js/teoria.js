@@ -1,288 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Teorias | Avengers: Doomsday</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="teorias.css">
-    <link rel="shortcut icon" href="img/faviconDooms-32x32.png" type="image/x-icon">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="teorias.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<header class="navbar">
-
-    <div class="nav-container">
-
-        <a href="index.html" class="logo">
-            <img src="img/logo-doom.png" alt="Avengers Doomsday">
-        </a>
-
-        <nav class="nav-links">
-            <a href="index.html">Início</a>
-            <a href="noticias.html">Notícias</a>
-            <a href="personagens.html">Personagens</a>
-            <a href="teorias.html" class="active">Teorias</a>
-            <a href="filmes.html">Filmes</a>
-            <a href="trailer.html">Trailer</a>
-            <a href="cronograma.html">Cronograma</a>
-            <a href="produtos.html">Produtos</a>
-            <a href="membros.html">Membros</a>
-        </nav>
-
-        <a href="membros.html" class="login-button">
-            Apoie o projeto
-        </a>
-
-    </div>
-
-</header>
-
-
-<section class="news-hero teorias-hero">
-
-    <div class="container">
-
-        <span>ESPECULAÇÃO DA COMUNIDADE</span>
-
-        <h1>
-            TEORIAS DOS
-            <strong>FÃS</strong>
-        </h1>
-
-        <p>
-            Análises, pistas escondidas e especulações sobre o que está
-            por vir em Avengers: Doomsday, feitas pela comunidade.
-        </p>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
-
-       <a href="#" class="featured-theory abrir-modal" data-id="destino-multiverso">
-
-            <div class="featured-theory-img">
-                <img src="img/destino-manipulando.png" alt="Teoria em destaque">
-                <span class="credibility-tag credibility-alta">ALTA CREDIBILIDADE</span>
-            </div>
-
-            <div class="featured-theory-content">
-
-                <span>TEORIA EM DESTAQUE</span>
-
-                <h2>
-                    Doutor Destino pode estar manipulando
-                    múltiplas variantes ao mesmo tempo
-                </h2>
-
-                <p>
-                    Analisando as pistas do trailer, fãs acreditam que Destino
-                    não é apenas um vilão isolado, mas sim uma peça de um plano
-                    muito maior envolvendo o multiverso inteiro.
-                </p>
-
-                <div class="featured-theory-meta">
-                    <span class="theory-author">por @teoriaverse</span>
-                    <span>·</span>
-                    <span>17 Ago 2026</span>
-                    <span>·</span>
-                    <span>142 comentários</span>
-                </div>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="section dark-section">
-
-    <div class="container">
-
-        <div class="news-filters" id="teoriasFilters">
-            <button class="filter-chip active" data-categoria="todas">Todas</button>
-            <button class="filter-chip" data-categoria="destino">Doutor Destino</button>
-            <button class="filter-chip" data-categoria="multiverso">Multiverso</button>
-            <button class="filter-chip" data-categoria="x-men">X-Men</button>
-            <button class="filter-chip" data-categoria="vingadores">Vingadores</button>
-            <button class="filter-chip" data-categoria="finale">Final do Filme</button>
-        </div>
-
-        <div class="theory-grid" id="theoryGrid">
-            <!-- as teorias serão inseridas aqui via JS -->
-        </div>
-
-        <div class="pagination" id="pagination">
-            <!-- os botões serão inseridos aqui via JS -->
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="theory-submit-banner">
-
-            <div>
-
-                <span>TEM UMA TEORIA?</span>
-
-                <h2>
-                    Compartilhe sua ideia com a comunidade.
-                </h2>
-
-                <p>
-                    Envie sua teoria e, se for aprovada, ela pode aparecer
-                    aqui na página.
-                </p>
-
-            </div>
-
-            <a href="embreve.html" class="primary-button">
-                ENVIAR TEORIA
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <div class="container footer-content">
-
-        <div>
-
-            <img
-                src="img/logo-doom.png"
-                alt="Logo"
-                class="footer-logo"
-            >
-
-            <p>
-                Um portal independente feito por fãs,
-                para fãs.
-            </p>
-
-        </div>
-
-        <div>
-
-            <h3>Explorar</h3>
-
-            <a href="noticias.html">Notícias</a>
-            <a href="teorias.html">Teorias</a>
-            <a href="personagens.html">Personagens</a>
-
-        </div>
-
-        <div>
-
-            <h3>Projeto</h3>
-
-            <a href="embreve.html">Sobre</a>
-            <a href="embreve.html">Contato</a>
-            <a href="membros.html">Apoie</a>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 Avengers Doomsday Fan Portal.
-    </div>
-
-</footer>
-
-<div class="modal-teoria" id="modalTeoria">
-
-    <div class="modal-overlay"></div>
-
-    <div class="modal-box">
-
-        <button class="modal-fechar" id="fecharModal">
-            ×
-        </button>
-
-        <img
-            id="modalImagem"
-            class="modal-imagem"
-            src=""
-            alt=""
-        >
-
-        <div class="modal-info">
-
-            <span class="modal-categoria">
-                TEORIA DOS FÃS
-            </span>
-
-            <span
-                id="modalCredibilidade"
-                class="modal-credibilidade">
-            </span>
-
-            <h2 id="modalTitulo"></h2>
-
-            <div class="modal-meta">
-
-                <span id="modalAutor"></span>
-
-                <span>•</span>
-
-                <span id="modalData"></span>
-
-                <span>•</span>
-
-                <span id="modalComentarios"></span>
-
-            </div>
-
-            <div
-                id="modalTexto"
-                class="modal-texto">
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<script>
 const teorias = [
 
     {
         categoria: "destino",
-        img: "img/variante-ferro.png",
+        img: "../static/img/variante-ferro.png",
         titulo: "Doutor Destino é uma variante de Tony Stark",
         excerto: "Muitos fãs acreditam que o personagem interpretado por Robert Downey Jr. será uma variante sombria de Tony Stark que seguiu um caminho diferente no multiverso. Isso explicaria sua inteligência extraordinária e sua conexão com os Vingadores.",
         autor: "@arcanotech",
@@ -335,8 +55,8 @@ const teorias = [
     },
 
     {
-        categoria: "finale",
-        img: "img/doutor-vence.png",
+        categoria: "multiverso",
+        img: "../static/img/doutor-vence.png",
         titulo: "Doutor Destino vencerá no final do filme",
         excerto: "Uma teoria sugere que Victor Von Doom perceberá que o multiverso está entrando em colapso e decidirá eliminar realidades inteiras para criar uma única linha do tempo perfeita sob seu controle.",
         autor: "@multiversal_br",
@@ -384,8 +104,8 @@ const teorias = [
     },
 
     {
-        categoria: "x-men",
-        img: "img/x-men-papel.png",
+        categoria: "vingadores",
+        img: "../static/img/x-men-papel.png",
         titulo: "Os X-Men terão papel fundamental na batalha final",
         excerto: "Com a presença de personagens como Professor X, Fera, Ciclope e Magneto, muitos acreditam que os mutantes serão essenciais para impedir os planos de Destino, iniciando oficialmente a era dos X-Men no MCU.",
         autor: "@martelodetodos",
@@ -434,8 +154,8 @@ const teorias = [
     },
 
     {
-        categoria: "multiverso",
-        img: "img/loki-herois.png",
+        categoria: "x-men",
+        img: "../static/img/loki-herois.png",
         titulo: "Loki reunirá os heróis do multiverso",
         excerto: "Após os eventos de sua série, Loki se tornou o guardião das linhas do tempo. A teoria diz que ele será responsável por encontrar e reunir heróis de diferentes universos para enfrentar a ameaça de Doutor Destino.",
         autor: "@mutante_prime",
@@ -481,7 +201,7 @@ const teorias = [
 
     {
         categoria: "finale",
-        img: "img/mundo-batalha.png",
+        img: "../static/img/mundo-batalha.png",
         titulo: "Avengers: Doomsday terminará com a criação de Battleworld",
         excerto: "Uma das teorias mais fortes é que o filme terminará com Destino fundindo fragmentos de várias realidades em um único planeta chamado Battleworld, preparando diretamente os acontecimentos de Avengers: Secret Wars.",
         autor: "@secretwarsbr",
@@ -533,8 +253,8 @@ const teorias = [
     },
 
     {
-        categoria: "vingadores",
-        img: "img/doom-sentinela.png",
+        categoria: "multiverso",
+        img: "../static/img/doom-sentinela.png",
         titulo: "O Sentinela pode se tornar um perigo maior que Destino",
         excerto: "O Sentinela possui um dos maiores níveis de poder da Marvel. Alguns fãs acreditam que sua personalidade sombria, o Vácuo, escapará do controle e se tornará uma ameaça tão grande quanto o próprio Doutor Destino.",
         autor: "@detetivemarvel",
@@ -579,8 +299,8 @@ const teorias = [
     },
 
     {
-        categoria: "multiverso",
-        img: "img/destino-4.png",
+        categoria: "destino",
+        img: "../static/img/destino-4.png",
         titulo: "Franklin Richards será a peça mais importante da história",
         excerto: "Nos quadrinhos de Secret Wars, Franklin Richards possui poderes de manipulação da realidade. Muitos fãs acreditam que Doutor Destino tentará usar ou controlar Franklin para reconstruir o multiverso e criar Battleworld.",
         autor: "@leakhunter",
@@ -624,8 +344,8 @@ const teorias = [
     },
 
     {
-        categoria: "destino",
-        img: "img/domm-naovilao.png",
+        categoria: "vingadores",
+        img: "../static/img/domm-naovilao.png",
         titulo: "Doutor Destino não será o verdadeiro vilão no início",
         excerto: "Uma teoria que cresceu após os trailers sugere que Doom aparecerá inicialmente como alguém tentando salvar o multiverso das Incursões. Os heróis podem até acreditar que ele é um aliado antes de descobrirem que seu plano envolve governar todas as realidades.",
         autor: "@teoriaverse",
@@ -680,8 +400,8 @@ const teorias = [
     },
 
     {
-        categoria: "destino",
-        img: "img/destino-aliado.png",
+        categoria: "vingadores",
+        img: "../static/img/destino-aliado.png",
         titulo: "Reed Richards fará uma aliança temporária com Doutor Destino",
         excerto: "Uma das teorias mais comentadas entre os fãs é que Reed Richards, o Senhor Fantástico, será forçado a formar uma aliança temporária com Doutor Destino em Avengers: Doomsday.",
         autor: "@teoriaverse",
@@ -761,275 +481,6 @@ const teorias = [
                 sendo a maior ameaça de todas.
             </p>
         `
-    },{
-    categoria: "destino",
-    img: "img/destino-manipulando.png",
-    titulo: "Doutor Destino pode estar manipulando múltiplas variantes ao mesmo tempo",
-    excerto: "Analisando as pistas do trailer, fãs acreditam que Destino não é apenas um vilão isolado, mas sim uma peça de um plano muito maior envolvendo o multiverso inteiro.",
-    autor: "@teoriaverse",
-    data: "17 AGO 2026",
-    credibilidade: "alta",
-    comentarios: 142,
-    id: "destino-multiverso",
-
-    teoria: `
-        <p>
-            Uma teoria bastante comentada pelos fãs sugere que
-            <strong>Doutor Destino pode estar manipulando diferentes
-            variantes de personagens ao mesmo tempo</strong>.
-        </p>
-
-        <p>
-            Em vez de agir sozinho, Victor Von Doom poderia estar
-            utilizando o conhecimento sobre o multiverso para influenciar
-            diferentes versões de heróis e vilões em realidades distintas.
-        </p>
-
-        <h3>Um plano muito maior</h3>
-
-        <p>
-            A ideia é que Destino não esteja interessado apenas em conquistar
-            uma única realidade. Seu verdadeiro objetivo poderia envolver
-            controlar acontecimentos em vários universos simultaneamente.
-        </p>
-
-        <p>
-            Dessa forma, algumas variantes poderiam estar trabalhando para
-            Doom sem sequer perceber que estão sendo utilizadas dentro de
-            um plano muito maior.
-        </p>
-
-        <h3>Por que manipular variantes?</h3>
-
-        <p>
-            Cada realidade possui versões diferentes dos mesmos personagens.
-            Destino poderia explorar essas diferenças para encontrar
-            aliados, informações e recursos que não existem em seu próprio
-            universo.
-        </p>
-
-        <p>
-            Isso também explicaria por que tantos personagens de diferentes
-            realidades poderiam acabar envolvidos no conflito.
-        </p>
-
-        <h3>O verdadeiro objetivo</h3>
-
-        <p>
-            Se essa teoria estiver correta, os acontecimentos de
-            <strong>Avengers: Doomsday</strong> poderiam revelar que grande
-            parte do conflito foi planejada por Destino muito antes de os
-            heróis perceberem o que estava acontecendo.
-        </p>
-
-        <p>
-            O maior perigo não seria apenas o poder de Victor Von Doom,
-            mas sua capacidade de manipular os acontecimentos do multiverso
-            para colocar cada peça exatamente onde ele precisa.
-        </p>
-    `
-},
+    }
 
 ];
-    // 👉 é só colar mais objetos aqui — filtro e paginação se ajustam sozinhos
-
-const TEORIAS_POR_PAGINA = 6;
-let paginaAtual = 1;
-let filtroAtivo = "todas";
-
-const rotuloCredibilidade = {
-    alta: "ALTA CREDIBILIDADE",
-    media: "CREDIBILIDADE MÉDIA",
-    baixa: "BAIXA CREDIBILIDADE"
-};
-
-function getTeoriasFiltradas() {
-    if (filtroAtivo === "todas") return teorias;
-    return teorias.filter(t => t.categoria === filtroAtivo);
-}
-
-function renderizarTeorias() {
-    const grid = document.getElementById("theoryGrid");
-    const lista = getTeoriasFiltradas();
-    const totalPaginas = Math.ceil(lista.length / TEORIAS_POR_PAGINA) || 1;
-
-    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
-    if (paginaAtual < 1) paginaAtual = 1;
-
-    const inicio = (paginaAtual - 1) * TEORIAS_POR_PAGINA;
-    const fim = inicio + TEORIAS_POR_PAGINA;
-    const teoriasDaPagina = lista.slice(inicio, fim);
-
-    if (teoriasDaPagina.length === 0) {
-        grid.innerHTML = `<p style="color:var(--gray);">Nenhuma teoria encontrada nessa categoria.</p>`;
-    } else {
-        grid.innerHTML = teoriasDaPagina.map(t => `
-            <article class="theory-card">
-                <div class="theory-card-img">
-                    <img src="${t.img}" alt="Teoria">
-                    <span class="credibility-tag credibility-${t.credibilidade}">${rotuloCredibilidade[t.credibilidade]}</span>
-                </div>
-                <div class="theory-content">
-                    <h3>${t.titulo}</h3>
-                    <p class="theory-excerpt">${t.excerto}</p>
-                    <div class="theory-footer">
-                        <span class="theory-author">${t.autor}</span>
-                        <span class="theory-comments">💬 ${t.comentarios}</span>
-                    </div>
-                    <div class="theory-bottom">
-                        <span class="news-date">${t.data}</span>
-
-                        <a href="#" class="abrir-modal" data-id="${t.id}">
-                            Ler teoria →
-                        </a>
-                    </div>
-                </div>
-            </article>
-        `).join("");
-    }
-
-    renderizarPaginacao(totalPaginas);
-}
-
-function renderizarPaginacao(totalPaginas) {
-    const pag = document.getElementById("pagination");
-
-    if (totalPaginas <= 1) {
-        pag.innerHTML = "";
-        return;
-    }
-
-    let html = "";
-
-    html += `<a href="#" class="page-btn prev" data-action="prev" ${paginaAtual === 1 ? 'style="pointer-events:none;opacity:0.4;"' : ''}>← Anterior</a>`;
-
-    for (let i = 1; i <= totalPaginas; i++) {
-        html += `<a href="#" class="page-num ${i === paginaAtual ? 'active' : ''}" data-page="${i}">${i}</a>`;
-    }
-
-    html += `<a href="#" class="page-btn next" data-action="next" ${paginaAtual === totalPaginas ? 'style="pointer-events:none;opacity:0.4;"' : ''}>Próxima →</a>`;
-
-    pag.innerHTML = html;
-}
-
-// clique na paginação
-document.getElementById("pagination").addEventListener("click", (e) => {
-    e.preventDefault();
-    const alvo = e.target;
-
-    if (alvo.dataset.action === "prev") {
-        paginaAtual--;
-    } else if (alvo.dataset.action === "next") {
-        paginaAtual++;
-    } else if (alvo.dataset.page) {
-        paginaAtual = parseInt(alvo.dataset.page);
-    } else {
-        return;
-    }
-
-    renderizarTeorias();
-    document.querySelector(".news-filters").scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-// clique nos filtros
-document.getElementById("teoriasFilters").addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-chip");
-    if (!btn) return;
-
-    document.querySelectorAll("#teoriasFilters .filter-chip").forEach(chip => chip.classList.remove("active"));
-    btn.classList.add("active");
-
-    filtroAtivo = btn.dataset.categoria;
-    paginaAtual = 1; // sempre volta pra primeira página ao trocar de filtro
-
-    renderizarTeorias();
-});
-
-// inicializa
-
-
-renderizarTeorias();
-
-
-const modalTeoria = document.getElementById("modalTeoria");
-
-const modalImagem = document.getElementById("modalImagem");
-const modalTitulo = document.getElementById("modalTitulo");
-const modalAutor = document.getElementById("modalAutor");
-const modalData = document.getElementById("modalData");
-const modalComentarios = document.getElementById("modalComentarios");
-const modalTexto = document.getElementById("modalTexto");
-const modalCredibilidade = document.getElementById("modalCredibilidade");
-
-
-document.addEventListener("click", function(e) {
-
-    const botao = e.target.closest(".abrir-modal");
-
-    if (!botao) return;
-
-    e.preventDefault();
-
-    const id = botao.dataset.id;
-
-    const teoria = teorias.find(t => t.id === id);
-
-    if (!teoria) return;
-
-
-    modalImagem.src = teoria.img;
-    modalImagem.alt = teoria.titulo;
-
-    modalTitulo.textContent = teoria.titulo;
-
-    modalAutor.textContent = teoria.autor;
-
-    modalData.textContent = teoria.data;
-
-    modalComentarios.textContent =
-        `${teoria.comentarios} comentários`;
-
-    modalCredibilidade.textContent =
-        rotuloCredibilidade[teoria.credibilidade];
-
-    modalTexto.innerHTML = teoria.teoria;
-
-
-    modalTeoria.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-});
-
-
-function fecharModal() {
-
-    modalTeoria.classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
-
-
-document
-    .getElementById("fecharModal")
-    .addEventListener("click", fecharModal);
-
-
-document
-    .querySelector(".modal-overlay")
-    .addEventListener("click", fecharModal);
-
-
-document.addEventListener("keydown", function(e) {
-
-    if (e.key === "Escape") {
-        fecharModal();
-    }
-
-});
-</script>
-
-</body>
-
-</html>

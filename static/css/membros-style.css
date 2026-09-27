@@ -88,7 +88,7 @@
             var(--black-deep) 0%,
             transparent 45%
         ),
-        url("../images/members-hero.jpg") center / cover no-repeat;
+        url("../img/members-hero.jpg") center / cover no-repeat;
 
     opacity: .9;
 }
