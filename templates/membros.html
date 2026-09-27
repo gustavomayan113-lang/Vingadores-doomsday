@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script data-goatcounter="https://gustavo.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body>
@@ -134,6 +136,24 @@
         </div>
     </section>
 
+<!-- CONTADOR DE ACESSOS -->
+<section class="access-counter">
+
+    <span>
+        NOSSOS ACESSOS
+    </span>
+
+    <div class="access-counter-value">
+        <strong id="access-counter-number">—</strong>
+        <em>acessos</em>
+    </div>
+
+    <p>
+        Total de visitas registradas no portal desde o início.
+    </p>
+
+</section>
+
 </main>
 
 
@@ -221,6 +241,18 @@
             }
         });
     });
+
+    // Contador de acessos (GoatCounter)
+    const accessNumber = document.getElementById('access-counter-number');
+
+    fetch('https://gustavo.goatcounter.com/counter/TOTAL.json')
+        .then(resp => resp.json())
+        .then(data => {
+            if (data && data.count) accessNumber.textContent = data.count;
+        })
+        .catch(() => {
+            accessNumber.textContent = '—';
+        });
 </script>
 
 </body>

@@ -647,6 +647,67 @@
 
 
 /* =====================================================
+   CONTADOR DE ACESSOS
+===================================================== */
+
+.access-counter {
+    width: min(1100px, 92%);
+    margin: -40px auto 90px;
+
+    padding: 35px 45px;
+
+    border: 1px solid var(--border-dark);
+    border-top: 1px solid var(--green-line);
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--black-2),
+            #090b0f
+        );
+}
+
+.access-counter > span {
+    color: var(--green-bright);
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.access-counter-value {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+
+    margin: 6px 0 4px;
+}
+
+.access-counter-value strong {
+    color: var(--white);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 64px;
+    line-height: 1;
+
+    text-shadow: 0 0 30px var(--green-glow);
+}
+
+.access-counter-value em {
+    color: var(--green);
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.access-counter p {
+    color: var(--gray-mute);
+    font-size: 13px;
+}
+
+
+/* =====================================================
    RESPONSIVO
 ===================================================== */
 
@@ -672,6 +733,10 @@
     .support-section {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .access-counter-value strong {
+        font-size: 52px;
     }
 
 }
@@ -719,6 +784,15 @@
 
     .support-section {
         padding: 30px;
+    }
+
+    .access-counter {
+        padding: 28px 30px;
+        margin: -20px auto 60px;
+    }
+
+    .access-counter-value strong {
+        font-size: 44px;
     }
 
 }
