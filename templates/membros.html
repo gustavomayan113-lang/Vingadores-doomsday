@@ -136,7 +136,7 @@
         </div>
     </section>
 
-<!-- CONTADOR DE ACESSOS -->
+<!-- CONTADOR DE ACESSOS + META -->
 <section class="access-counter">
 
     <span>
@@ -150,6 +150,62 @@
 
     <p>
         Total de visitas registradas no portal desde o início.
+    </p>
+
+</section>
+
+<!-- ÁREA DE SPOILERS -->
+<section class="spoilers-section" id="spoilers">
+
+    <div class="section-intro">
+        <span class="section-label">
+            ÁREA DE SPOILERS
+        </span>
+        <h2>
+            O que o multiverso
+            <strong>não queria mostrar</strong>
+        </h2>
+        <p>
+            Analisei cena a cena os pós-créditos de Ultimato e tudo
+            que aparece sobre o Doutor Destino. O primeiro vídeo é
+            livre para todo mundo. Os próximos só abrem quando a
+            meta de acessos for batida.
+        </p>
+    </div>
+
+    <!-- META -->
+    <div class="goal-card">
+
+        <div class="goal-top">
+            <span class="goal-label">
+                PROGRESSO DA META
+            </span>
+
+            <span class="goal-numbers">
+                <strong id="goalCurrent">—</strong>
+                <em>/</em>
+                <span id="goalTarget">—</span>
+                acessos
+            </span>
+        </div>
+
+        <div class="goal-bar">
+            <div class="goal-bar-fill" id="goalFill"></div>
+        </div>
+
+        <p class="goal-note" id="goalNote">
+            Carregando o progresso...
+        </p>
+
+        <p class="goal-you" id="goalYou"></p>
+    </div>
+
+    <!-- VÍDEOS -->
+    <div class="video-grid" id="videoGrid"></div>
+
+    <p class="spoilers-warning">
+        Atenção: esta área contém spoilers pesados de
+        Avengers: Doomsday e Ultimato.
     </p>
 
 </section>
@@ -244,11 +300,135 @@
 
     // Contador de acessos (GoatCounter)
     const accessNumber = document.getElementById('access-counter-number');
+    const totalAcessos = { valor: 0 };
 
+    // =====================================================
+    // META DE ACESSOS + ÁREA DE SPOILERS
+    // =====================================================
+
+    // Meta em acessos que libera os vídeos bloqueados
+    const META = 500;
+
+    // Vídeos da área de spoilers
+    // Campo 'meta' = acessos necessários para liberar (padrão: META)
+    // Campo 'liberado' = true libera na hora
+    const VIDEOS = [
+        {
+            src: '../static/img/poscreditohulk.mp4',
+            thumb: '../static/img/hero-doom.png',
+            titulo: 'Pós-créditos: o que o Destino está fazendo',
+            descricao: 'Oque vai acontecer com o Hulk ? Ele Morreu ? O que o Destino está tramando ?',
+            duracao: '1:24',
+            liberado: true
+        },
+        {
+            src: '../static/img/poscreditoavt.mp4',
+            thumb: '../static/img/destino-mundo-novo.png',
+            titulo: 'O que o multiverso está escondendo',
+            descricao: 'A cena que muda tudo sobre o Doomsday, explicada segundo a segundo.',
+            duracao: '4:05',
+            meta: META
+        }
+    ];
+
+    const videoGrid = document.getElementById('videoGrid');
+    const goalFill = document.getElementById('goalFill');
+    const goalCurrent = document.getElementById('goalCurrent');
+    const goalTarget = document.getElementById('goalTarget');
+    const goalNote = document.getElementById('goalNote');
+    const goalYou = document.getElementById('goalYou');
+
+    const numeroBR = valor => valor.toLocaleString('pt-BR');
+    const metaDoVideo = video => video.meta || META;
+    const metaGeral = Math.max(...VIDEOS.map(metaDoVideo));
+
+    function atualizarMeta() {
+        const total = totalAcessos.valor;
+        const percentual = Math.min(100, Math.round((total / metaGeral) * 100));
+
+        goalTarget.textContent = numeroBR(metaGeral);
+        goalCurrent.textContent = numeroBR(total);
+        goalFill.style.width = percentual + '%';
+
+        if (total >= metaGeral) {
+            goalNote.textContent = 'Meta batida! Todos os spoilers já estão liberados.';
+        } else {
+            goalNote.textContent =
+                'Faltam ' + numeroBR(metaGeral - total) +
+                ' acessos para liberar o próximo vídeo.';
+        }
+
+        goalYou.textContent = total > 0
+            ? 'Você é o visitante nº ' + numeroBR(total) + ' do portal.'
+            : '';
+    }
+
+    function renderizarVideos() {
+        videoGrid.innerHTML = '';
+
+        VIDEOS.forEach(video => {
+            const meta = metaDoVideo(video);
+            const liberado = video.liberado || totalAcessos.valor >= meta;
+            const card = document.createElement('article');
+            card.className = 'video-card' + (liberado ? '' : ' locked');
+
+            if (liberado) {
+                card.innerHTML =
+                    '<div class="video-frame">' +
+                        '<video controls preload="metadata" poster="' + video.thumb + '">' +
+                            '<source src="' + video.src + '" type="video/mp4">' +
+                        '</video>' +
+                    '</div>' +
+                    '<div class="video-info">' +
+                        '<span class="video-tag">LIVRE</span>' +
+                        '<h3>' + video.titulo + '</h3>' +
+                        '<p>' + video.descricao + '</p>' +
+                        '<span class="video-badge">' + video.duracao + '</span>' +
+                    '</div>';
+            } else {
+                const percentual = Math.min(
+                    100,
+                    Math.round((totalAcessos.valor / meta) * 100)
+                );
+                const faltam = Math.max(meta - totalAcessos.valor, 0);
+
+                card.innerHTML =
+                    '<div class="video-frame video-frame-locked">' +
+                        '<img src="' + video.thumb + '" alt="">' +
+                        '<div class="video-lock">' +
+                            '<span class="lock-icon">🔒</span>' +
+                            '<strong>BLOQUEADO</strong>' +
+                            '<p>Faltam ' + numeroBR(faltam) + ' acessos para liberar</p>' +
+                            '<div class="lock-bar">' +
+                                '<div class="lock-bar-fill" style="width:' + percentual + '%"></div>' +
+                            '</div>' +
+                            '<a class="lock-cta" href="#pixKey">AJUDAR A BATER A META</a>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="video-info">' +
+                        '<span class="video-tag">SPOILER</span>' +
+                        '<h3>' + video.titulo + '</h3>' +
+                        '<p>' + video.descricao + '</p>' +
+                        '<span class="video-badge">' + video.duracao + '</span>' +
+                    '</div>';
+            }
+
+            videoGrid.appendChild(card);
+        });
+    }
+
+    renderizarVideos();
+    atualizarMeta();
+
+    // Busca o total no GoatCounter e libera os vídeos automaticamente
     fetch('https://gustavo.goatcounter.com/counter/TOTAL.json')
         .then(resp => resp.json())
         .then(data => {
-            if (data && data.count) accessNumber.textContent = data.count;
+            totalAcessos.valor =
+                parseInt(String(data.count).replace(/\D/g, ''), 10) || 0;
+            accessNumber.textContent = numeroBR(totalAcessos.valor);
+            renderizarVideos();
+            atualizarMeta();
         })
         .catch(() => {
             accessNumber.textContent = '—';
